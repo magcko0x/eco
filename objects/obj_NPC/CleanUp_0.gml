@@ -1,0 +1,2 @@
+part_system_destroy(psystem)
+instance_destroy(mylight)

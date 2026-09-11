@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_rabies_infect",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.66176873,
+  "exportDir":"",
+  "name":"snd_rabies_infect",
+  "parent":{
+    "name":"Rabies",
+    "path":"folders/Sounds/SFX/Entities/Rabies.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":11025,
+  "soundFile":"snd_rabies_infect.ogg",
+  "volume":1.0,
+}

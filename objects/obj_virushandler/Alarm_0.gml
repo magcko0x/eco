@@ -1,0 +1,1 @@
+if global.currentroom = -1 || room = rm_death instance_destroy()

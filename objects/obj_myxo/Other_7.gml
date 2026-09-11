@@ -1,0 +1,1 @@
+stepsnd = audio_play_sound_at(snd_myxo_step, x, y, 0, 300, 600, 1, false, 0,1,0,random_range(1.1,2));

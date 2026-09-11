@@ -1,0 +1,20 @@
+target_x = 0;
+target_y = 0;
+target_rm = rm_f1_introOLD
+extraparams = false
+fade_duration_in_steps = 30
+roomgoto = 0
+fade_color = c_black
+current_alpha = 0
+fade_out = true
+skipfade = false
+usetarget = false
+enID = 0
+teleported = false
+currentroom = -1
+changecurrentroom = false
+changedir = false
+xdir = 0
+ydir = 0
+
+depth = -10000

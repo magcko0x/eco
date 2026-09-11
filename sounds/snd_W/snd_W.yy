@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_W",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.33913833,
+  "exportDir":"",
+  "name":"snd_W",
+  "parent":{
+    "name":"Sunflower",
+    "path":"folders/Sounds/SFX/Sunflower.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":11025,
+  "soundFile":"snd_W.ogg",
+  "volume":1.0,
+}

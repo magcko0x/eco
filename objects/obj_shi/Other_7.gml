@@ -1,0 +1,1 @@
+audio_play_sound_at(snd_shi_flap,x,y,0,300,600,1,false,0,1,0,random_range(0.1,2))

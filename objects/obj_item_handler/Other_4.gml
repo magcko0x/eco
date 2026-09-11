@@ -1,0 +1,3 @@
+roomstartcode()
+
+if room = rm_death instance_destroy()

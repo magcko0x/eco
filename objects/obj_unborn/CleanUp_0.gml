@@ -1,0 +1,2 @@
+audio_stop_sound(closesfx)
+audio_stop_sound(farawaysfx)

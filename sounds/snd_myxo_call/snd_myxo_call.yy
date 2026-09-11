@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_myxo_call",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.46591836,
+  "exportDir":"",
+  "name":"snd_myxo_call",
+  "parent":{
+    "name":"Myxo",
+    "path":"folders/Sounds/SFX/Entities/Myxo.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_myxo_call.ogg",
+  "volume":1.0,
+}

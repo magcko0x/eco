@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_arrow_meow,0,indx,indy,1,1,inda,c_white,image_alpha)

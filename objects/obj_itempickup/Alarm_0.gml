@@ -1,0 +1,1 @@
+if item = -1 instance_destroy()

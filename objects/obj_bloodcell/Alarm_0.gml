@@ -1,0 +1,1 @@
+particle_delete(psystem[0])

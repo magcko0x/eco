@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_rot_laugh",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.7879173,
+  "exportDir":"",
+  "name":"snd_rot_laugh",
+  "parent":{
+    "name":"Voicelines",
+    "path":"folders/Sounds/SFX/Entities/Rot/Voicelines.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"snd_rot_laugh.ogg",
+  "volume":1.0,
+}

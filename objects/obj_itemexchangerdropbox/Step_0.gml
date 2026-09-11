@@ -1,0 +1,35 @@
+depth = owner.depth - 1
+
+hover = instance_exists(obj_hand) && obj_hand.selectedobj = id && obj_hand.state = obj_hand.free
+
+if global.interact && CLICKED {
+	
+	if obj_playerhandler.playerinventory[obj_inventory.pos] != -1 {
+		for (var i = 0; i < array_length(owner.itemlist); i++) {
+			if owner.itemlist[i][0] = obj_playerhandler.playerinventory[obj_inventory.pos] {
+				solditem = obj_playerhandler.playerinventory[obj_inventory.pos]
+				global.credits += owner.itemlist[i][1]
+			}
+		}
+		
+		audio_play_sound_at(snd_pickup,x,y,0,100,200,1,false,0,0.5,0,2)
+		obj_playerhandler.playerinventory[obj_inventory.pos] = -1
+	}
+	
+}
+
+if obj_playerhandler.playerinventory[obj_inventory.pos] != -1 deac = false else deac = true
+
+if hover && obj_playerhandler.playerinventory[obj_inventory.pos] != -1{
+	if (image_index < sprite_get_number(sprite_index) - 1) {
+		image_speed = 1
+	} else {
+		image_speed = 0	
+	}
+} else {
+	if (image_index > 0) {
+		image_speed = -1
+	} else {
+		image_speed = 0	
+	}
+}

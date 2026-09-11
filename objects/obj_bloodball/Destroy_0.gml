@@ -1,0 +1,1 @@
+audio_play_sound_at(snd_splat,x,y,0,200,300,1,false,0,1,0,random_range(0.4,1))

@@ -1,0 +1,1 @@
+global.music = -1

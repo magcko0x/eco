@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_bunambience",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":1,
+  "conversionMode":0,
+  "duration":13.232381,
+  "exportDir":"",
+  "name":"snd_bunambience",
+  "parent":{
+    "name":"Bun",
+    "path":"folders/Sounds/SFX/Entities/Bun.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":22050,
+  "soundFile":"snd_bunambience.ogg",
+  "volume":1.0,
+}

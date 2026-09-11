@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_tendril_ambience",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.0882087,
+  "exportDir":"",
+  "name":"snd_tendril_ambience",
+  "parent":{
+    "name":"Tendril",
+    "path":"folders/Sounds/SFX/Entities/Tendril.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_tendril_ambience.ogg",
+  "volume":1.0,
+}

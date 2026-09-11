@@ -1,0 +1,1 @@
+line = phrase + space
