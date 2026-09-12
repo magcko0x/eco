@@ -72,7 +72,47 @@ if !global.hideinventory {
 	        draw_sprite_ext(spr_keyGUI, 0, keyshakex + keyinvx, keyshakey + keyinvy,1,1,0,keycolor,1)
 	    }
     
-	    prevpos = pos
-	    previtem = obj_playerhandler.playerinventory[pos]
+		//Draw credits
+		
+		if global.credits > 0 {
+			var credits = "C" + string_replace_all(string_format(currentcredits,3,0)," ","0")
+		
+			if currentcredits != global.credits {
+				var prev_credits = floor(currentcredits)
+	
+				currentcredits = lerp(currentcredits, global.credits, 0.1)
+	
+				if abs(global.credits - currentcredits) < 0.5 {
+					currentcredits = global.credits
+				}
+	
+				if floor(currentcredits) != prev_credits {
+					audio_play_sound(snd_credit, 0, false, 0.5, 0, 2)
+				}
+			}
+		
+			draw_set_font(myfont)
+		    draw_set_halign(fa_left)
+		    draw_set_valign(fa_top)
+		
+			var creditsw = 96
+			var creditsh = string_height(credits)
+		
+			var creditsyoffset = 8
+			var creditsxoffset = -16
+		
+			draw_sprite_stretched
+			(
+				spr_credit_counter,
+				0,
+				invx - creditsw - 8 + creditsxoffset,invy - 8 + creditsyoffset,
+				creditsw + 12,32 + 16
+			)
+				
+			draw_text_colour(invx - creditsw + creditsxoffset,invy + creditsyoffset,credits,c_white,c_white,c_white,c_white,1)
+	
+		    prevpos = pos
+		    previtem = obj_playerhandler.playerinventory[pos]
+		}
 	}
 }

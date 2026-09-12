@@ -22,3 +22,9 @@ keyshake_strength = 4
 
 pflip = array_create(INVENTORY_SLOTS,-1)
 flip = array_create(INVENTORY_SLOTS,-1)
+
+characters = "0123456789C"
+
+currentcredits = 0
+
+myfont = font_add_sprite_ext(spr_credit_numbers, characters, true, 4)

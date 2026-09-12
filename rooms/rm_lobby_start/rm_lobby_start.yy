@@ -59,8 +59,6 @@
     {"name":"inst_59236FCC","path":"rooms/rm_lobby_start/rm_lobby_start.yy",},
     {"name":"inst_6678006B","path":"rooms/rm_lobby_start/rm_lobby_start.yy",},
     {"name":"inst_18BF9FBA","path":"rooms/rm_lobby_start/rm_lobby_start.yy",},
-    {"name":"inst_7FF954AB","path":"rooms/rm_lobby_start/rm_lobby_start.yy",},
-    {"name":"inst_2CE74C5F","path":"rooms/rm_lobby_start/rm_lobby_start.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -135,8 +133,6 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_wordsign","path":"objects/obj_wordsign/obj_wordsign.yy",},"propertyId":{"name":"phrase","path":"objects/obj_wordsign/obj_wordsign.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_wordsign","path":"objects/obj_wordsign/obj_wordsign.yy",},"propertyId":{"name":"addspace","path":"objects/obj_wordsign/obj_wordsign.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":672.0,},
-        {"$GMRInstance":"v4","%Name":"inst_7FF954AB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":8,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7FF954AB","objectId":{"name":"obj_itempickup","path":"objects/obj_itempickup/obj_itempickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":656.0,"y":752.0,},
-        {"$GMRInstance":"v4","%Name":"inst_2CE74C5F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":9,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2CE74C5F","objectId":{"name":"obj_itempickup","path":"objects/obj_itempickup/obj_itempickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":688.0,"y":752.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"LobbyBG","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_18B515B4","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_18B515B4","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_lobbybg1","path":"sprites/spr_lobbybg1/spr_lobbybg1.yy",},"x":0.0,"y":0.0,},

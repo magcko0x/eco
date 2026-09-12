@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":8,
   "conversionMode":0,
-  "duration":0.476344,
+  "duration":0.47635415,
   "exportDir":"",
   "name":"snd_step",
   "parent":{

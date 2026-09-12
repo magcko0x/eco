@@ -1,6 +1,5 @@
 depth = owner.depth - 1
-
-line = $"{global.credits} / {owner.cost}   "
+line = "C" + string_replace_all(string_format(owner.cost,3,0)," ","0") + "        "
 
 draw_sprite(spr_itemexchangerdisp, 0, x, y)
 
@@ -35,7 +34,7 @@ draw_set_valign(fa_top)
 
 for(var j = 0; j < 3; j++) {
 	var draw_x = x - scroll + total_text_width * j
-	draw_text_transformed(draw_x, y - 26, line, textsize, textsize, 0)
+	draw_text_transformed(draw_x, y - 30, line, textsize, textsize, 0)
 }
 
 gpu_set_alphatestenable(false)
