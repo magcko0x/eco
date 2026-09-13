@@ -10,7 +10,6 @@ if global.interact {
 	if active {
 		state()
 	}
-
 }
 
 if instance_exists(obj_lightsout) {
@@ -28,3 +27,5 @@ mylight.x = x
 mylight.y = y
 
 selectedobj = instance_place(x,y,tag_get_asset_ids("selectable",asset_object))
+
+prevstate = state

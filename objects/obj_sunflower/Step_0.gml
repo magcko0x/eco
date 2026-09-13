@@ -1,4 +1,4 @@
-setdepth()
+setdepth(32)
 
 deac = instance_exists(mytalker)
 

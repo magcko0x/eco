@@ -67,14 +67,20 @@ dead = function ()
 		global.floor = -1
 	
 		if !instance_exists(obj_transition) {
-				var tran = instance_create_depth(0,0,-8000,obj_transition)
-				tran.current_alpha = 0.9
-				tran.usetarget = true
-				tran.enID = 0 
-				tran.roomgoto = 0
-				tran.target_rm = rm_death
-				tran.changecurrentroom = true
+			var tran = instance_create_depth(0,0,-8000,obj_transition)
+			tran.current_alpha = 0.9
+			tran.usetarget = true
+			tran.enID = 0 
+			tran.roomgoto = 0
+			tran.target_rm = rm_death
+			tran.changecurrentroom = true
 		}
+		
+		for (var i = 0; i < array_length(obj_playerhandler.playerinventory); i++) {
+			obj_playerhandler.playerinventory[i] = -1
+		}
+		
+		global.credits = 0
 	}
 	
 }

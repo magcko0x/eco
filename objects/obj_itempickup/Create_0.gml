@@ -24,3 +24,5 @@ if (image_index == 0) {
 }
 
 timer = irandom_range(0, 100);
+
+depthoffset = 0

@@ -42,13 +42,23 @@ free = function() {
 		myline.owner = self
 	}
 	
-	selectedobj = instance_place(x,y,tag_get_asset_ids("selectable",asset_object))
+	if grabbedobj = noone {
+		selectedobj = instance_place(x,y,tag_get_asset_ids("selectable",asset_object))
+	} else {
+		selectedobj = noone	
+	}
+	
+	if grabbedobj != noone {
+		image_index = grabbedobj.cursor	
+	}
 	
 	if selectedobj && instance_exists(selectedobj) && selectedobj.deac = false{
 		var selector = selectedobj
 		image_index = selector.cursor
-        angle = point_direction(x,y,selector.x,selector.y) + 90
-	} else {
+		
+		if grabbedobj == noone
+			angle = point_direction(x,y,selector.x,(selector.y - selector.sprite_yoffset + selector.sprite_height/2)) - 90
+	} else if grabbedobj = noone {
         image_index = 0
         angle = point_direction(x,y,obj_player.x,obj_player.y) + 90
     } 
@@ -116,3 +126,4 @@ disabled = function() {
 }
 
 state = free
+prevstate = state

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_sorry_to_keep_you_waiting",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.2187953,
+  "exportDir":"",
+  "name":"snd_sorry_to_keep_you_waiting",
+  "parent":{
+    "name":"Entities",
+    "path":"folders/Sounds/SFX/Entities.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"snd_sorry_to_keep_you_waiting.mp3",
+  "volume":1.0,
+}

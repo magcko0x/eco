@@ -1,4 +1,4 @@
-setdepth()
+setdepth(depthoffset)
 
 if global.interact {
 	if CLICKED {

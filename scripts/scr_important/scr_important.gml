@@ -1,23 +1,23 @@
 //macro
-#macro DOWN 0
-#macro LEFT 1
-#macro RIGHT 2
-#macro UP 3
-#macro SUBGRID 8
-#macro CLICKED (instance_exists(obj_hand) && obj_hand.selectedobj = id && mouse_check_button_pressed(mb_left) && obj_hand.state = obj_hand.free && obj_hand.active)
-#macro DRAGGED (instance_exists(obj_hand) && obj_hand.selectedobj = id && mouse_check_button(mb_left) && obj_hand.state = obj_hand.free && (obj_hand.grabbedobj = noone || obj_hand.grabbedobj = id))
-#macro RELEASED (mouse_check_button_released(mb_left) && obj_hand.prevgrabbedobj = id)
-#macro RANINTO (point_distance(obj_player.x,obj_player.y,x,y) <= 20 && obj_player.spd >= 10 && obj_player.moving)
-#macro VIEW_H view_hport[0]
-#macro VIEW_W view_wport[0]
+#macro DOWN	0
+#macro LEFT	1
+#macro RIGHT	2
+#macro UP	3
+#macro SUBGRID	8
+#macro CLICKED	(instance_exists(obj_hand) && obj_hand.selectedobj = id && mouse_check_button_pressed(mb_left) && obj_hand.state = obj_hand.free && obj_hand.active)
+#macro DRAGGED	(instance_exists(obj_hand) && mouse_check_button(mb_left) && obj_hand.state = obj_hand.free && obj_hand.active && obj_hand.grabbedobj = id)
+#macro RELEASED	(instance_exists(obj_hand) && obj_hand.prevgrabbedobj = id && (mouse_check_button_released(mb_left) || obj_hand.state != obj_hand.free || !obj_hand.active || obj_hand.grabbedobj != id))
+#macro RANINTO	(point_distance(obj_player.x, obj_player.y, x, y) <= 20 && obj_player.spd >= 10 && obj_player.moving)
+#macro VIEW_H	view_hport[0]
+#macro VIEW_W	view_wport[0]
 
 //settings n stuff
 global.interact = true
 global.killed_enemies = []
 
 // other stuff
-function setdepth() {
-	depth = clamp(-(y - sprite_yoffset + sprite_height),-10000,5000)
+function setdepth(yoffset = 0) {
+	depth = clamp(-(y - sprite_yoffset + sprite_height + yoffset),-10000,5000)
 }
 
 function draw_outline(sprite,index,outline_thickness,outline_color,_x = x, _y = y,angle = image_angle) {
@@ -30,7 +30,7 @@ function draw_outline(sprite,index,outline_thickness,outline_color,_x = x, _y = 
 }
 
 function draw_selected (spr = sprite_index,index = image_index,_x = x,_y = y) {
-	if instance_exists(obj_hand) && obj_hand.selectedobj = id && obj_hand.state = obj_hand.free {
+	if instance_exists(obj_hand) && obj_hand.selectedobj = id && obj_hand.state = obj_hand.free && obj_hand.grabbedobj == noone{
 		draw_outline(spr,index,1,c_white,_x,_y)	
 	}
 }

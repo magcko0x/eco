@@ -1,1 +1,1 @@
-audio_stop_sound(ambsfx)
+audio_emitter_free(emitter)

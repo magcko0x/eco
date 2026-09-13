@@ -1,5 +1,9 @@
 if !DRAGGED {
-	cursor = 1	
+	cursor = 1
+		
+	if CLICKED {
+		obj_hand.grabbedobj = id	
+	}
 }
 
 if DRAGGED {
@@ -23,6 +27,8 @@ else {
 colliding = place_meeting(x + xspd, y, collisions) || place_meeting(x, y + yspd, collisions) || (!DRAGGED && instance_place(x + xspd, y + yspd, obj_ball) != noone)
 
 if colliding != prevcollide {
+	if obj_hand.grabbedobj = instance_id
+		obj_hand.grabbedobj = noone
 	audio_play_sound_at(snd_myxo_step,x,y,0,200,300,1,false,0,1,0,random_range(0.7,1.2))
 }
 

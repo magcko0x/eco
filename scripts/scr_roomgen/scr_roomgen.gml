@@ -62,7 +62,7 @@ function get_rooms_list(floors,part) {
 
 					global.saferoomslist = [rm_f2_safe1,rm_f2_safe2]
 
-					global.basicroomslist = [rm_f2_basic1,rm_f2_basic2,rm_f2_basic3,rm_f2_basic4,rm_f2_plat1,rm_f2_plat2];
+					global.basicroomslist = [rm_f2_basic1,rm_f2_basic2,rm_f2_basic3,rm_f2_basic4]
 			
 					global.keyroomslist = [rm_f2_key1,rm_f2_key2,rm_f2_ball1,rm_f2_ball2,rm_f2_math1]
 					
@@ -73,7 +73,7 @@ function get_rooms_list(floors,part) {
 
 					global.saferoomslist = [rm_f1_p2_safe1,rm_f1_p2_safe2,rm_f1_p2_basic3]
 
-					global.basicroomslist = [rm_f1_p2_basic,rm_f1_p2_basic2,rm_f1_p2_basic3];
+					global.basicroomslist = [rm_f1_p2_basic,rm_f1_p2_basic2,rm_f1_p2_basic3]
 			
 					global.keyroomslist = [rm_f1_p2_key1,rm_f1_p2_key2]
 					

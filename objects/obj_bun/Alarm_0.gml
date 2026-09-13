@@ -1,0 +1,1 @@
+audio_play_sound_on(emitter,snd_bunambience,true,0)

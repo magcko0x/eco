@@ -20,4 +20,6 @@ function get_item_loot_table() {
         //apple
 		array_insert(item_loot_table,array_length(item_loot_table)-1,[2,5])	
 	}
+	
+	return item_loot_table
 }

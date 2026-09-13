@@ -1,10 +1,8 @@
 setdepth()
 
+audio_emitter_position(emitter,x,y,0)
 
 if global.interact
-	
-	if !audio_is_playing(ambsfx) && !goaway
-		ambsfx = audio_play_sound_at(snd_tendril_ambience,x,y,0,200,400,1,true,0,1,random(1))
 	
 	if harmless {
 		if iframe > 0 {

@@ -21,27 +21,22 @@ if global.interact {
 		image_alpha = 1	
 	}
 	
-	if (instance_exists(target)) {
-		
-		// 1. DYNAMIC RANKING (No static indices)
-	    var _total = instance_number(obj_blossom);
-	    var _my_rank = 0;
-	    var _me = id;
+	if instance_exists(target) {
+
+		var _total = instance_number(obj_blossom)
+		var _my_rank = 0
+		var _me = id
     
-	    // Count how many blossoms have a smaller ID than me
-	    with (obj_blossom) {
-	        if (id < _me) _my_rank++;
-	    }
+		with (obj_blossom) {
+			if (id < _me) _my_rank++
+		}
 
-	    // 2. UNIVERSAL SYNC (No global variables)
-	    // Adjust the '0.1' to change how fast they spin
-	    var _base_angle = (current_time * 0.05) * orbit_speed; 
-	    var _spacing = 360 / _total;
-	    var _final_angle = _base_angle + (_my_rank * _spacing);
+		var _base_angle = (current_time * 0.05) * orbit_speed
+		var _spacing = 360 / _total
+		var _final_angle = _base_angle + (_my_rank * _spacing)
 
-	    // 3. POSITIONING
-	    x = target.x + lengthdir_x(orbit_radius, _final_angle);
-	    y = target.y + lengthdir_y(orbit_radius, _final_angle);
+		x = target.x + lengthdir_x(orbit_radius, _final_angle)
+		y = target.y + lengthdir_y(orbit_radius, _final_angle)
 		
 		target.protected = true
 		

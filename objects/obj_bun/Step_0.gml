@@ -22,14 +22,10 @@ if !global.interact {
     }
 }
 
-if !audio_is_playing(ambsfx){
-	ambsfx = audio_play_sound_at(snd_bunambience, x, y, 0, 300, 600, 1, true, 0,1,0)
-}
-
 if player.safe {
-	audio_sound_pitch(ambsfx,0.5)
+	audio_emitter_pitch(emitter,0.5)
 } else {
-	audio_sound_pitch(ambsfx,1)
+	audio_emitter_pitch(emitter,1)
 }
 
 if instance_exists(door) {
@@ -54,8 +50,7 @@ if place_meeting(x,y,obj_door) {
 	
 	
 	mp_grid_destroy(global.path_grid);
-	path_delete(my_path);
-	audio_stop_sound(ambsfx)
+	path_delete(my_path)
 	instance_destroy(self)
 }
 
@@ -73,3 +68,5 @@ if global.floor != -1 {
 	
 	owner.still_here = stillhere
 }
+
+audio_emitter_position(emitter, x, y, 0)

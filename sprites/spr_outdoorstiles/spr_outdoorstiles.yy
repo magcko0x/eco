@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_outdoorstiles",
   "bboxMode":0,
-  "bbox_bottom":799,
+  "bbox_bottom":959,
   "bbox_left":0,
   "bbox_right":127,
   "bbox_top":0,

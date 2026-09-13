@@ -1,3 +1,7 @@
-if instance_exists(obj_bunhandler)
-	if owner.bun_amount = 0 && !stillhere
+if instance_exists(obj_bunhandler) {
+	if owner.bun_amount = 0 && !stillhere {
 		owner.bun_gone = true
+	}
+}
+
+audio_emitter_free(emitter)

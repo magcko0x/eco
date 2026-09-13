@@ -23,6 +23,9 @@ for (var i = 0; i < array_length(solids); i++) {
 	bannedcol[array_length(bannedcol)] = solids[i]	
 }
 
-alarm[0] = 5
+alarm[0] = 2
 
 save_entity_to_cafeteria("tendril")
+
+emitter = audio_emitter_create()
+audio_emitter_falloff(emitter, 96, 128, 1)
