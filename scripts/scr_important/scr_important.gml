@@ -20,18 +20,18 @@ function setdepth(yoffset = 0) {
 	depth = clamp(-(y - sprite_yoffset + sprite_height + yoffset),-10000,5000)
 }
 
-function draw_outline(sprite,index,outline_thickness,outline_color,_x = x, _y = y,angle = image_angle) {
+function draw_outline(sprite,index,outline_thickness,outline_color,_x = x, _y = y,_xscale = image_xscale,_yscale = image_yscale,_angle = image_angle) {
 	gpu_set_fog(true,outline_color,0,0)
-	draw_sprite_ext(sprite, index, _x - outline_thickness, _y, image_xscale, image_yscale, angle, c_white, 1);
-	draw_sprite_ext(sprite, index, _x + outline_thickness, _y, image_xscale, image_yscale, angle, c_white, 1);
-	draw_sprite_ext(sprite, index, _x, _y - outline_thickness, image_xscale, image_yscale, angle, c_white, 1);
-	draw_sprite_ext(sprite, index, _x, _y + outline_thickness, image_xscale, image_yscale, angle, c_white, 1);
+	draw_sprite_ext(sprite, index, _x - outline_thickness, _y, _xscale, _yscale, _angle, c_white, 1);
+	draw_sprite_ext(sprite, index, _x + outline_thickness, _y, _xscale, _yscale, _angle, c_white, 1);
+	draw_sprite_ext(sprite, index, _x, _y - outline_thickness, _xscale, _yscale, _angle, c_white, 1);
+	draw_sprite_ext(sprite, index, _x, _y + outline_thickness, _xscale, _yscale, _angle, c_white, 1);
 	gpu_set_fog(false,c_white,0,0)
 }
 
-function draw_selected (spr = sprite_index,index = image_index,_x = x,_y = y) {
+function draw_selected (spr = sprite_index,index = image_index,_x = x,_y = y,_xscale = image_xscale,_yscale = image_yscale,_angle = image_angle) {
 	if instance_exists(obj_hand) && obj_hand.selectedobj = id && obj_hand.state = obj_hand.free && obj_hand.grabbedobj == noone{
-		draw_outline(spr,index,1,c_white,_x,_y)	
+		draw_outline(spr,index,1,c_white,_x,_y,_xscale,_yscale,_angle)	
 	}
 }
 
@@ -105,4 +105,47 @@ function weighted_random(chance_array) {
 			return chance_array[i][0]; // Return the item's name (or index, etc.)
 		}
 	}
+}
+
+function spawn_across_area(spawnobj,spawnzone,collist) {
+	
+	var target_mask = object_get_mask(spawnobj)
+	if target_mask == -1 {
+		target_mask = object_get_sprite(spawnobj)
+	}
+	
+	var target_sprite = object_get_sprite(spawnobj)
+	
+	var target_xoffset = sprite_get_xoffset(target_sprite)
+	
+	var target_yoffset = sprite_get_yoffset(target_sprite)
+	
+	var old_mask = mask_index
+	mask_index = target_mask	
+		
+	var maparray = []
+	
+	var spawnedobj = -1
+	
+	for (var j = 0; j < room_height div 16; j++) {
+		for (var i = 0; i < room_width div 16; i++) {
+			
+				var check_x = i * 16 - target_xoffset
+				var check_y = j * 16 - target_yoffset
+				
+				if place_meeting(check_x, check_y, spawnzone) && !place_meeting(check_x, check_y, collist) {
+					array_push(maparray, {xx : check_x, yy : check_y})
+				}
+			
+		}
+	}
+	
+	if array_length(maparray) > 0 {
+		var positiontospawn = maparray[irandom(array_length(maparray)-1)]
+			
+		spawnedobj = instance_create_depth(positiontospawn.xx,positiontospawn.yy,depth,spawnobj)
+	}
+	
+	mask_index = old_mask
+	return spawnedobj
 }

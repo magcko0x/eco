@@ -1,4 +1,4 @@
-randomize()
+
 
 global.path_grid = mp_grid_create(0, 0, room_width div 8, room_height div 8, 8, 8); 
 

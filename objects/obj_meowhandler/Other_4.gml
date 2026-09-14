@@ -1,4 +1,4 @@
-randomize()
+
 
 mymeows = -1
 

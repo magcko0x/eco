@@ -1,4 +1,4 @@
-randomize()
+
 
 timer_default = 20 * 60;
 timer_still_here = 120;

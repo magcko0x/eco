@@ -1,10 +1,10 @@
 event_inherited();
 mylight = instance_create_depth(x, y, depth, obj_light);
-mylight.radius = 48;
+mylight.radius = 32;
 
 cursor = 1;
 
-randomize();
+;
 get_item_loot_table();
 
 if (global.inbackstage) {
@@ -26,3 +26,9 @@ if (image_index == 0) {
 timer = irandom_range(0, 100);
 
 depthoffset = 0
+
+z = 0
+
+z_offset = 0
+
+false_angle = 0

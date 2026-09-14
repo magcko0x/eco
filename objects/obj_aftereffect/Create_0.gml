@@ -1,6 +1,6 @@
 owner = noone
 
-randomize()
+
 
 
 ydir = 1

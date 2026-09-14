@@ -97,7 +97,7 @@ function generate_rooms() {
 				get_rooms_list(global.floor,j)
 				
 				if global.rooms[i] == -1 {
-					randomize()
+					
 			
 					var chancer = irandom(100)
 			
@@ -134,7 +134,7 @@ function generate_rooms() {
 				get_rooms_list(global.floor,j)
 				
 				if global.rooms[i] == -1 {
-					randomize()
+					
 			
 					var chancer = irandom(100)
 			

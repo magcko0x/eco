@@ -39,5 +39,8 @@
     "path":"sprites/spr_credit1/spr_credit1.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "pickup",
+  ],
   "visible":true,
 }

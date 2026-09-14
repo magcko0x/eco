@@ -42,6 +42,8 @@ free = function() {
 		myline.owner = self
 	}
 	
+	if !instance_exists(grabbedobj) grabbedobj = noone
+	
 	if grabbedobj = noone {
 		selectedobj = instance_place(x,y,tag_get_asset_ids("selectable",asset_object))
 	} else {
@@ -67,8 +69,6 @@ free = function() {
 		state = far
 		shake_strength = 4
 	}
-	
-	if !instance_exists(grabbedobj) grabbedobj = noone
 	
 	prevgrabbedobj = grabbedobj	
 }

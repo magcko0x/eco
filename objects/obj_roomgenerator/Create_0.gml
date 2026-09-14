@@ -1,5 +1,5 @@
 global.part = 0
-randomize()
+
 reset_rooms()
 //entity_picker()
 generate_rooms()

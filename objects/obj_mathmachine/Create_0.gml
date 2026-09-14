@@ -1,4 +1,4 @@
-randomize()
+
 
 mylight = instance_create_depth(x,y,depth,obj_light)
 mylight.radius = 64

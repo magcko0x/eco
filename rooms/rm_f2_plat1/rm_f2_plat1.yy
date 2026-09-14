@@ -168,8 +168,8 @@
   ],
   "name":"rm_f2_plat1",
   "parent":{
-    "name":"Platform rooms",
-    "path":"folders/Rooms/Floor 2/Part1/Basic rooms/Basic rooms/Platform rooms.yy",
+    "name":"Unused",
+    "path":"folders/Rooms/Floor 2/Unused.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -35,6 +35,7 @@ if growingitem && instance_exists(itemgrowing){
 if !instance_exists(itemgrowing) && watered {
 	sprite_index = spr_flowerpot_retreat
 	image_speed = 1
+	mask_index = spr_null
 }
 
 

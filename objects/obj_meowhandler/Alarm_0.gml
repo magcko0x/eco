@@ -1,7 +1,7 @@
 
 var chancer, xx, yy
 		
-randomize()
+
 chancer = irandom(3) 
 
 switch chancer { 

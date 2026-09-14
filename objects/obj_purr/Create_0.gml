@@ -28,7 +28,7 @@ add = 0
 
     var chancer
     		
-    randomize()
+    
     chancer = irandom(3) 
     
     switch chancer { 

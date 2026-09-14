@@ -32,7 +32,6 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"spawnlock","filters":[],"listItems":[],"multiselect":false,"name":"spawnlock","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"customcolor","filters":[],"listItems":[],"multiselect":false,"name":"customcolor","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
@@ -43,5 +42,8 @@
     "path":"sprites/spr_key/spr_key.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "pickup",
+  ],
   "visible":true,
 }

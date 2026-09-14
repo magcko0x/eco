@@ -40,5 +40,8 @@
     "path":"sprites/spr_syringe/spr_syringe.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "pickup",
+  ],
   "visible":true,
 }

@@ -12,7 +12,7 @@ if layer_exists("Tiles_1") {
 		}
 }
 
-image_alpha = 5
+image_alpha = 10
 
 slowdownspd = 3
 

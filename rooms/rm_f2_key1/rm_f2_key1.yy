@@ -240,8 +240,8 @@
   ],
   "name":"rm_f2_key1",
   "parent":{
-    "name":"Key rooms",
-    "path":"folders/Rooms/Floor 2/Part1/Key rooms.yy",
+    "name":"Unused",
+    "path":"folders/Rooms/Floor 2/Unused.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

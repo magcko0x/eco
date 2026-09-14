@@ -1,4 +1,4 @@
-randomize()
+
 
 if !active
 	chance = irandom_range(0,20)

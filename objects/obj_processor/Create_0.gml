@@ -1,3 +1,5 @@
+randomize()
+
 if !variable_global_exists("backfromdeath") {
 	global.backfromdeath = false	
 }

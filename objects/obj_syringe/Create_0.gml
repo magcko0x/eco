@@ -2,7 +2,7 @@ event_inherited()
 mylight = instance_create_depth(x,y,depth,obj_light)
 mylight.radius = 16
 
-randomize()
+
 
 depth = 5000
 

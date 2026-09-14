@@ -1,7 +1,7 @@
 if !instance_exists(obj_rot) {
 	var chancer, xx, yy
 		
-	randomize()
+	
 	chancer = irandom(3) 
 
 	switch chancer {

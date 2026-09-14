@@ -5,6 +5,19 @@ if room = rm_death {
 
 if global.floor != -1 {
 	
+	//spawn credits
+	var chance = irandom(5)
+
+	if chance == 0 {
+	
+		var creditamount = 1 + floor(power(random(1), 2) * 19)
+	
+		repeat creditamount {
+			spawn_across_area(obj_credit, obj_spawnzone, collist)
+		}
+	}	
+	
+	
 	//music switch
 	switch global.floor {
 		case 0:
@@ -62,7 +75,7 @@ if global.floor != -1 {
 	
 	get_rooms_list(global.floor,global.part)
 	
-} else if global.inbackstage{
+} else if global.inbackstage {
 	if global.backstagedata[global.backstagey][global.backstagex].darkroom {
 		if !instance_exists(obj_lightsout) {
 			var light = instance_create_depth(x,y,depth,obj_lightsout)
@@ -72,3 +85,4 @@ if global.floor != -1 {
 		}
 	}
 }
+

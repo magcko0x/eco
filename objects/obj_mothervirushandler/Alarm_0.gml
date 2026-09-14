@@ -4,7 +4,7 @@ if instance_exists(self) {
 			if !instance_exists(obj_rabies) {
 				var chancer, xx, yy
 		
-				randomize()
+				
 				chancer = irandom(3) 
 
 				switch chancer {
