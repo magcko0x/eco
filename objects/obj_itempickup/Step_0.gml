@@ -15,6 +15,7 @@ z = y_offset
 
 false_angle = y_offset + angle_offset
 
+mylight.x = x
 mylight.y = y + z + z_offset
 
 if global.interact {

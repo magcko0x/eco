@@ -1,5 +1,5 @@
 depth = owner.depth - 1
-line = "C" + string_replace_all(string_format(owner.cost,3,0)," ","0") + "        "
+line = "C" + string_replace_all(string_format(owner.item.cost,3,0)," ","0") + "        "
 
 draw_sprite(spr_itemexchangerdisp, 0, x, y)
 

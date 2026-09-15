@@ -33,6 +33,8 @@ prevgrabbedobj = grabbedobj
 
 active = true
 
+drawitem = false
+
 free = function() {
 	x = mouse_x
 	y = mouse_y
@@ -44,6 +46,8 @@ free = function() {
 	
 	if !instance_exists(grabbedobj) grabbedobj = noone
 	
+	drawitem = false
+	
 	if grabbedobj = noone {
 		selectedobj = instance_place(x,y,tag_get_asset_ids("selectable",asset_object))
 	} else {
@@ -51,12 +55,19 @@ free = function() {
 	}
 	
 	if grabbedobj != noone {
-		image_index = grabbedobj.cursor	
+		image_index = grabbedobj.cursor
+		
+		if variable_instance_exists(grabbedobj,"drawitem") {
+			drawitem = grabbedobj.drawitem	
+		}
 	}
 	
 	if selectedobj && instance_exists(selectedobj) && selectedobj.deac = false{
 		var selector = selectedobj
 		image_index = selector.cursor
+		if variable_instance_exists(selector,"drawitem") {
+			drawitem = selector.drawitem	
+		}
 		
 		if grabbedobj == noone
 			angle = point_direction(x,y,selector.x,(selector.y - selector.sprite_yoffset + selector.sprite_height/2)) - 90

@@ -5,12 +5,8 @@ hover = instance_exists(obj_hand) && obj_hand.selectedobj = id && obj_hand.state
 if global.interact && CLICKED {
 	
 	if obj_playerhandler.playerinventory[obj_inventory.pos] != -1 {
-		for (var i = 0; i < array_length(owner.itemlist); i++) {
-			if owner.itemlist[i][0] = obj_playerhandler.playerinventory[obj_inventory.pos] {
-				solditem = obj_playerhandler.playerinventory[obj_inventory.pos]
-				global.credits += owner.itemlist[i][1]
-			}
-		}
+		solditem = obj_playerhandler.playerinventory[obj_inventory.pos]
+		global.credits += solditem.cost		
 		
 		audio_play_sound_at(snd_pickup,x,y,0,100,200,1,false,0,0.5,0,2)
 		obj_playerhandler.playerinventory[obj_inventory.pos] = -1
@@ -18,7 +14,7 @@ if global.interact && CLICKED {
 	
 }
 
-if obj_playerhandler.playerinventory[obj_inventory.pos] != -1 deac = false else deac = true
+deac = obj_playerhandler.playerinventory[obj_inventory.pos] == -1
 
 if hover && obj_playerhandler.playerinventory[obj_inventory.pos] != -1{
 	if (image_index < sprite_get_number(sprite_index) - 1) {

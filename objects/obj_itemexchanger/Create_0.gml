@@ -3,27 +3,15 @@ event_inherited()
 
 
 itemlist = [
-	[0,10],
-	[1,5],
-	[2,50],
-	[3,100],
-	[4,100],
-	[5,100],
-	[6,100],
-	[7,500]
+	variable_clone(get_item_definition("battery")),
+	variable_clone(get_item_definition("apple")),
+	variable_clone(get_item_definition("compass")),
+	variable_clone(get_item_definition("blossom")),
+	variable_clone(get_item_definition("save")),
+	variable_clone(get_item_definition("green sun")),
 ]
 
-unavailable_items = [4,5]
-
-available_items = []
-
-array_copy(available_items,0,itemlist,0,array_length(itemlist))
-
-for (var i = array_length(unavailable_items) - 1; i > -1; i--) {
-	array_delete(available_items,unavailable_items[i],1)
-}
-
-available_items = array_shuffle(available_items)
+available_items = array_shuffle(itemlist)
 
 selector = 0
 

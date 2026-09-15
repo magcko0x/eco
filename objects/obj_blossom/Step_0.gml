@@ -1,44 +1,49 @@
 depth = -5000
 
+audio_emitter_position(emitter,x,y,0)
+
+if !audio_is_playing(ambiance) {
+	ambiance = audio_play_sound_on(emitter, snd_blossom_ambience, true, 0, 1, 0, random_range(0.7,1.2))
+}
+
+if alarm[0] = -1
+	alarm[0] = irandom_range(20,200)
+
+part_particles_burst(psystem,x,y,part_hearts)
+		
+part_system_depth(psystem,depth)
+	
+if place_meeting(x,y,obj_hand) {
+	image_alpha = 0.5
+	part_particles_clear(psystem)
+} else {
+	image_alpha = 1	
+}
+
+if instance_exists(target) {
+
+	var _total = instance_number(obj_blossom)
+	var _my_rank = 0
+	var _me = id
+    
+	with (obj_blossom) {
+		if (id < _me) _my_rank++
+	}
+
+	var _base_angle = (current_time * 0.05) * orbit_speed
+	var _spacing = 360 / _total
+	var _final_angle = _base_angle + (_my_rank * _spacing)
+
+	x = target.x + lengthdir_x(orbit_radius, _final_angle)
+	y = target.y + lengthdir_y(orbit_radius, _final_angle)
+		
+	target.protected = true
+}
+
+
 if global.interact {
 	
-	if !audio_is_playing(snd_blossom_ambience) {
-		audio_play_sound(snd_blossom_ambience,0,false,1,0,random_range(0.7,1.2))	
-	}
-	
-	if alarm[0] = -1
-		alarm[0] = irandom_range(20,200)
-	
-	
-	part_particles_burst(psystem,x,y,part_hearts)
-		
-	part_system_depth(psystem,depth)
-	
-	if place_meeting(x,y,obj_hand) {
-		image_alpha = 0.5
-		part_particles_clear(psystem)
-	} else {
-		image_alpha = 1	
-	}
-	
 	if instance_exists(target) {
-
-		var _total = instance_number(obj_blossom)
-		var _my_rank = 0
-		var _me = id
-    
-		with (obj_blossom) {
-			if (id < _me) _my_rank++
-		}
-
-		var _base_angle = (current_time * 0.05) * orbit_speed
-		var _spacing = 360 / _total
-		var _final_angle = _base_angle + (_my_rank * _spacing)
-
-		x = target.x + lengthdir_x(orbit_radius, _final_angle)
-		y = target.y + lengthdir_y(orbit_radius, _final_angle)
-		
-		target.protected = true
 		
 		var me = self
 		

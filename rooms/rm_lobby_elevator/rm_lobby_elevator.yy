@@ -19,6 +19,7 @@
     {"name":"inst_60699A41","path":"rooms/rm_lobby_elevator/rm_lobby_elevator.yy",},
     {"name":"inst_5622B9DC","path":"rooms/rm_lobby_elevator/rm_lobby_elevator.yy",},
     {"name":"inst_3B2D915C","path":"rooms/rm_lobby_elevator/rm_lobby_elevator.yy",},
+    {"name":"inst_3730451D","path":"rooms/rm_lobby_elevator/rm_lobby_elevator.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -38,6 +39,7 @@
         {"$GMRInstance":"v4","%Name":"inst_49A179B7_1_1_2_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_49A179B7_1_1_2_1","objectId":{"name":"obj_roomtarget","path":"objects/obj_roomtarget/obj_roomtarget.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":272.0,},
         {"$GMRInstance":"v4","%Name":"inst_4D54DB48_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4D54DB48_1","objectId":{"name":"obj_roomwarp","path":"objects/obj_roomwarp/obj_roomwarp.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.5,"x":224.0,"y":288.0,},
         {"$GMRInstance":"v4","%Name":"inst_60699A41","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_60699A41","objectId":{"name":"obj_elevatorbutton","path":"objects/obj_elevatorbutton/obj_elevatorbutton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":53.0,},
+        {"$GMRInstance":"v4","%Name":"inst_3730451D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3730451D","objectId":{"name":"obj_time_capsule","path":"objects/obj_time_capsule/obj_time_capsule.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":80.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_5A88FCE","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_5A88FCE","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_elevator_room","path":"sprites/spr_elevator_room/spr_elevator_room.yy",},"x":96.0,"y":32.0,},

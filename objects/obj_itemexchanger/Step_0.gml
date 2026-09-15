@@ -15,5 +15,4 @@ itemy = y_offset
 
 itema = y_offset + angle_offset
 
-item = itemarray[selector][0]
-cost = itemarray[selector][1]
+item = itemarray[selector]

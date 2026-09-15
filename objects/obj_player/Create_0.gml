@@ -80,6 +80,8 @@ dead = function ()
 			obj_playerhandler.playerinventory[i] = -1
 		}
 		
+		obj_inventory.showcredits = false
+		
 		global.credits = 0
 	}
 	

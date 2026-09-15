@@ -8,7 +8,6 @@ previtem = 0
 namealpha = 1
 desc = ""
 name = ""
-getitemstuff(obj_playerhandler.playerinventory[pos],obj_playerhandler.playerinventory,pos)
 
 invx = 480 - ((12+row_length*36)/2)
 invy = 480
@@ -28,3 +27,5 @@ characters = "0123456789C"
 currentcredits = 0
 
 myfont = font_add_sprite_ext(spr_credit_numbers, characters, true, 4)
+
+showcredits = false

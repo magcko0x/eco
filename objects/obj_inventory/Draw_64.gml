@@ -1,4 +1,5 @@
 if !global.hideinventory {
+	
 	if instance_exists(obj_playerhandler) {
     
 		//Draw window
@@ -15,7 +16,13 @@ if !global.hideinventory {
 			if pos = i {draw_sprite(spr_cursor,0,xx,yy)}	
 	
 			if (obj_playerhandler.playerinventory[i] != -1) {
-				draw_sprite(spr_item,obj_playerhandler.playerinventory[i],xx,yy)
+				
+				var itemsprite = obj_playerhandler.playerinventory[i].sprite
+				var itemimage = obj_playerhandler.playerinventory[i].image
+				var itemxoff = sprite_get_xoffset(itemsprite)
+				var itemyoff = sprite_get_yoffset(itemsprite)
+				
+				draw_sprite(itemsprite,itemimage,xx + itemxoff,yy + itemyoff)
 			}
 		}
     
@@ -56,7 +63,7 @@ if !global.hideinventory {
 			addy2 = 36 + obj_rottimer.shakey
 		}
 	
-	    draw_text_ext_transformed_colour(480,invy - 5 - addy - addy2,string_upper(name),32,16,0.5,0.5,0,c_white,c_white,c_white,c_white,namealpha)
+	    draw_text_ext_transformed_colour(480,invy - 5 - addy - addy2,string_upper(obj_playerhandler.playerinventory[pos].name),32,16,0.5,0.5,0,c_white,c_white,c_white,c_white,namealpha)
     
 	    //Draw keys
     
@@ -74,7 +81,7 @@ if !global.hideinventory {
     
 		//Draw credits
 		
-		if global.credits > 0 {
+		if showcredits {
 			var credits = "C" + string_replace_all(string_format(currentcredits,3,0)," ","0")
 		
 			if currentcredits != global.credits {

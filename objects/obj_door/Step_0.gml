@@ -1,36 +1,34 @@
-var player = instance_nearest(x,y,obj_player)
-var distance = point_in_rectangle(obj_player.x,obj_player.y,x,y,x+32,y+40)
+var player = instance_nearest(x, y, obj_player)
+var distance = point_in_rectangle(obj_player.x, obj_player.y, x, y, x + 32, y + 40)
 var myself = self
 
 if global.interact {
 	current_zoom = obj_processor.current_zoom
 	
-	charge = clamp(charge,0,3)
+	charge = clamp(charge, 0, 3)
 
 	if frame != 1 {
 		
-		if charge != prevcharge {
-			if charge = 3 {
-				audio_play_sound_at(snd_powerdown,x,y,0,200,400,1,false,0)
-			}
+		if charge != prevcharge && charge == 3 {
+			audio_play_sound_at(snd_powerdown, x, y, 0, 200, 400, 1, false, 0)
 		}
 		
 		if charge > 0 {
-			if (CLICKED  && !locked) || (RANINTO && !locked) {
-				global.interact = false
-				audio_play_sound_at(snd_dooropen,x,y,0,200,400,1,false,0)
-				opendoor = true
-			}
-	
-			if (CLICKED && locked) || (RANINTO && locked) {
-				if obj_playerhandler.key = true {
-					doorshake_strength = 4
-					obj_playerhandler.key = false
-					locked = false	
-					audio_play_sound_at(snd_lockdoor,x,y,0,200,400,1,false,0)
-				} else if !RANINTO{
-					lockshake_strength = 4
-					audio_play_sound_at(snd_lockdoor,x,y,0,200,400,1,false,0)
+			if CLICKED || RANINTO {
+				if !locked {
+					global.interact = false
+					audio_play_sound_at(snd_dooropen, x, y, 0, 200, 400, 1, false, 0)
+					opendoor = true
+				} else {
+					if obj_playerhandler.key {
+						doorshake_strength = 4
+						obj_playerhandler.key = false
+						locked = false	
+						audio_play_sound_at(snd_lockdoor, x, y, 0, 200, 400, 1, false, 0)
+					} else if !RANINTO {
+						lockshake_strength = 4
+						audio_play_sound_at(snd_lockdoor, x, y, 0, 200, 400, 1, false, 0)
+					}
 				}
 			}
 		}
@@ -39,13 +37,15 @@ if global.interact {
 	prevcharge = charge
 }
 
-if frame = 1 {
+if frame == 1 {
 	if !instance_exists(obj_transition) {
-		var tran = instance_create_depth(0,0,-8000,obj_transition)
+		global.interact = false
+		
+		var tran = instance_create_depth(0, 0, -8000, obj_transition)
 		
 		transitioncode()
 		
-		if target_rm = global.rooms[global.currentroom + 1]
+		if target_rm == global.rooms[global.currentroom + 1]
 			global.currentroom += 1
 		
 		tran.usetarget = true

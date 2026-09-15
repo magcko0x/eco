@@ -4,7 +4,6 @@ mylight.radius = 32;
 
 cursor = 1;
 
-;
 get_item_loot_table();
 
 if (global.inbackstage) {
@@ -15,12 +14,12 @@ if (global.inbackstage) {
 }
 
 if (image_index == 0) {
-	item = weighted_random(item_loot_table);
+	item = variable_clone(get_item_definition(weighted_random(item_loot_table)))
 	if (item == -1) {
-		alarm[0] = 3;
+		alarm[0] = 3
 	}
 } else {
-	item = image_index - 1;
+	item = global.itemlist[image_index - 1]
 }
 
 timer = irandom_range(0, 100);

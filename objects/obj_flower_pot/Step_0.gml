@@ -8,7 +8,7 @@ if prevwatered != watered && watered = true {
 	itemgrowing.image_yscale = 0
 	itemgrowing.depth = depth - 1
 	if itemgrowing.object_index == obj_itempickup {
-		itemgrowing.item = growingitemid
+		itemgrowing.item = variable_clone(get_item_definition(growingitemid))
 		itemgrowing.depthoffset = 32
 	}
 	

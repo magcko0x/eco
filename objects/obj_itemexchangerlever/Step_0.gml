@@ -23,11 +23,11 @@ if image_index > 0 {
 	deac = false	
 }
 
-if owner.cost <= global.credits && inventory_search(obj_playerhandler.playerinventory,-1) != -1{
+if owner.item.cost <= global.credits && inventory_search(obj_playerhandler.playerinventory,-1) != -1{
 	if global.interact && CLICKED && !deac {
 		
-		if inventory_add(obj_playerhandler.playerinventory,owner.itemarray[owner.selector][0])[0] {
-			global.credits -= owner.cost
+		if inventory_add(obj_playerhandler.playerinventory,owner.itemarray[owner.selector])[0] {
+			global.credits -= owner.item.cost
 			audio_play_sound_at(snd_lever,x,y,0,100,200,1,false,0,0.5)
 			image_index = 1
 		}

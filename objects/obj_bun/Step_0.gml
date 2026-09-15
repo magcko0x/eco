@@ -51,7 +51,9 @@ if place_meeting(x,y,obj_door) {
 	
 	mp_grid_destroy(global.path_grid);
 	path_delete(my_path)
-	instance_destroy(self)
+	instance_destroy()
+	
+	exit
 }
 
 collision = collision_rectangle(0,y-14,room_width,y+40,obj_player,false,true)

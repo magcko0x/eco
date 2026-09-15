@@ -5,20 +5,20 @@ function get_item_loot_table() {
 		//nothing
 			[-1,300],
 		//battery
-			[0,50],
+			["battery",50],
 		//compass
-			[1,100],
+			["compass",100],
         //save
-            [3,20],
+            ["save",20],
 		//green sun
-			[6,1],
+			["green sun",1],
 		//blossom
-			[7,1]
+			["blossom",1]
 	]
 	
 	if instance_exists(obj_rothandler) {
         //apple
-		array_insert(item_loot_table,array_length(item_loot_table)-1,[2,5])	
+		array_push(item_loot_table,["apple",5])
 	}
 	
 	return item_loot_table

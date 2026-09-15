@@ -39,3 +39,8 @@ owner = noone
 
 mylight = instance_create_depth(x,y,depth,obj_light)
 mylight.radius = 64
+
+emitter = audio_emitter_create()
+audio_emitter_falloff(emitter, 200, 300, 1)
+
+ambiance = audio_play_sound_on(emitter, snd_blossom_ambience, true, 0, 1, 0, random_range(0.7,1.2))
