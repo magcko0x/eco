@@ -11,7 +11,7 @@ if state = "FREE" {
     ipx = player.x + offx
     ipy = player.y + offy
 
-    if spd < 2
+    if spd < 1
     	spd += 0.25
 }
 

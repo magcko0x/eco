@@ -1,13 +1,15 @@
-go_ahead = (global.currentroom != -1)
+go_ahead = global.currentroom != -1
 
 var total_rooms = array_length(global.rooms)
 
+var important_rooms = tag_get_asset_ids("room_important", asset_room)
+
 if go_ahead {
 	for (var i = 0; i < 6; i++) {
-			var check_idx = global.currentroom + i
-			if check_idx < total_rooms {
-				if array_contains(global.importantroomslist, global.rooms[check_idx]) {
-					go_ahead = false
+		var check_idx = global.currentroom + i
+		if check_idx < total_rooms {
+			if array_contains(important_rooms, global.rooms[check_idx].room_asset) {
+				go_ahead = false
 				break
 			}
 		}
@@ -15,7 +17,7 @@ if go_ahead {
 }
 
 if !still_here {
-	if go_ahead && irandom(bun_spawn_chance) = 0 {
+	if go_ahead && irandom(bun_spawn_chance) == 0 {
 		bun_active = true
 		bun_spawn_active = true
 	}
@@ -23,12 +25,13 @@ if !still_here {
 	if bun_spawn_active && !room_replaced {
 		
 		var safe_room_check = false
+		var safe_rooms_base = tag_get_asset_ids("room_safe", asset_room)
 		
 		for (var i = 0; i < 4; i++) {
-				var check_idx = global.currentroom + i
-				if check_idx < total_rooms {
-					if array_contains(global.saferoomslist, global.rooms[check_idx]) {
-						safe_room_check = true
+			var check_idx = global.currentroom + i
+			if check_idx < total_rooms {
+				if array_contains(safe_rooms_base, global.rooms[check_idx].room_asset) {
+					safe_room_check = true
 					break
 				}
 			}
@@ -37,11 +40,24 @@ if !still_here {
 		if !safe_room_check {
 			
 			var target_room = global.currentroom + 3
-		
+			
 			if target_room < total_rooms {
-				var random_safe = irandom(array_length(global.saferoomslist) - 1)
-				global.rooms[target_room] = global.saferoomslist[random_safe]
-				room_replaced = true
+				var room_to_replace = global.rooms[target_room].room_asset
+				var room_to_replace_tags = asset_get_tags(room_to_replace, asset_room)
+				
+				var safe_rooms_pool = []
+				
+				for (var i = 0; i < array_length(safe_rooms_base); i++) {
+					if asset_has_tags(safe_rooms_base[i], room_to_replace_tags, asset_room) {
+						array_push(safe_rooms_pool, safe_rooms_base[i])
+					}
+				}
+			
+				if array_length(safe_rooms_pool) > 0 {
+					var random_index = irandom(array_length(safe_rooms_pool) - 1)
+					global.rooms[target_room].room_asset = safe_rooms_pool[random_index]
+					room_replaced = true
+				}
 			}
 			
 		} else {

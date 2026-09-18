@@ -1,3 +1,5 @@
+timer = clamp(timer,0,MINUTE * (99 + 59/60))
+
 if global.interact {
 	if timer > 0 {
 		timer--	

@@ -1,55 +1,66 @@
-if !DRAGGED {
-	image_angle = lerp(image_angle,0,0.3)	
-}
-
-
-if !returning {
+if global.interact {
 	if !DRAGGED {
-		cursor = 1
-		
-		if CLICKED {
-			obj_hand.grabbedobj = id	
-		}
+		image_angle = lerp(image_angle,0,0.3)	
 	}
 
-	if DRAGGED {
-		image_angle = lerp(image_angle,-45,0.3)
-	
-		cursor = 9
+
+	if !returning {
+		if !DRAGGED {
+			cursor = 1
 		
-		var wateredinst = instance_place(x + 30, y + 24,tag_get_asset_ids("waterable",asset_object))
-		
-		if variable_instance_exists(wateredinst,"watered") {
-			wateredinst.watered = true	
+			if CLICKED {
+				obj_hand.grabbedobj = id	
+			}
 		}
 
-		x = obj_hand.x
-		y = obj_hand.y
-	} 
-	else if RELEASED{
-		
-		returning = true
-		deac = true
-		if (obj_hand.prevgrabbedobj == id) {
-			obj_hand.grabbedobj = noone
-		}
-	}
-} else {
+		if DRAGGED {
+			image_angle = lerp(image_angle,-45,0.3)
 	
-	if point_distance(x,y,xstart,ystart) > 0.2 {
-		x = lerp(x,xstart,0.2)
-		y = lerp(y,ystart,0.2)
+			cursor = 9
+		
+		
+			var wateredlist = ds_list_create()
+		
+			var wateredcollide = instance_place_list(x + 30, y + 24,tag_get_asset_ids("waterable",asset_object),wateredlist,true)
+		
+			if wateredcollide {
+				for (var i = 0; i < ds_list_size(wateredlist); i++) {
+					var wateredinst = wateredlist[|i]
+				
+					if variable_instance_exists(wateredinst,"watered") {
+						wateredinst.watered = true	
+					}
+				}
+			}
+
+			x = obj_hand.x
+			y = obj_hand.y
+		} 
+		else if RELEASED{
+		
+			returning = true
+			deac = true
+			if (obj_hand.prevgrabbedobj == id) {
+				obj_hand.grabbedobj = noone
+			}
+		}
 	} else {
-		x = xstart
-		y = ystart
-		
-		deac = false
-		returning = false
-	}
 	
+		if point_distance(x,y,xstart,ystart) > 0.2 {
+			x = lerp(x,xstart,0.2)
+			y = lerp(y,ystart,0.2)
+		} else {
+			x = xstart
+			y = ystart
+		
+			deac = false
+			returning = false
+		}
+	
+	}
+
+	mylight.x = x
+	mylight.y = y
+
+	audio_emitter_position(emitter,x,y,0)
 }
-
-mylight.x = x
-mylight.y = y
-
-audio_emitter_position(emitter,x,y,0)

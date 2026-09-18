@@ -23,7 +23,7 @@ if state = "open" {
 		if instance_exists(obj_roomwarp) {
 			with obj_roomwarp {
                 if global.rooms[0] != -1 || global.floor < global.ultmaxfloor{
-                    target_rm = global.rooms[0]
+                    target_rm = global.rooms[0].room_asset
                     enID = 0
                 } else {
                     target_rm = rm_lobby_pre_elevator

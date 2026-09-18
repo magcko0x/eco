@@ -55,3 +55,6 @@ add = 0
     
 	
 save_entity_to_cafeteria("meow")
+
+layer_create(depth,"Particles")
+psystem = part_system_create_layer("Particles",false)

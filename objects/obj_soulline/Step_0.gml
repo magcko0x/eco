@@ -1,10 +1,10 @@
 setdepth()
 
-dist = point_distance(owner.x + owner.shakex,owner.y + owner.shakey, owner.owner.x, owner.owner.y)
-dir = point_direction(owner.x + owner.shakex,owner.y + owner.shakey, owner.owner.x, owner.owner.y)
+dist = point_distance(owner.owner.x, owner.owner.y,owner.x + owner.shakex,owner.y + owner.shakey)
+dir = point_direction(owner.owner.x, owner.owner.y,owner.x + owner.shakex,owner.y + owner.shakey)
 
-x = owner.x
-y =	owner.y
+x = owner.owner.x
+y =	owner.owner.y
 
 image_speed = 0.5 * owner.currentdist
 

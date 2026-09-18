@@ -176,6 +176,7 @@ global.itemlist = [
 					with obj_rottimer {
 						shake_strength = 6
 						timer += irandom_range(-(MINUTE / 2), MINUTE / 2.5)
+						timer = clamp(timer,0,MINUTE * (99 + 59/60))						
 					}
 				}
 				

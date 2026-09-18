@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_tumbler_roll",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":14.635704,
+  "exportDir":"",
+  "name":"snd_tumbler_roll",
+  "parent":{
+    "name":"Tumbler",
+    "path":"folders/Sounds/SFX/Entities/Tumbler.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"snd_tumbler_roll.ogg",
+  "volume":1.0,
+}

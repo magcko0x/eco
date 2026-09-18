@@ -45,8 +45,13 @@ if frame == 1 {
 		
 		transitioncode()
 		
-		if target_rm == global.rooms[global.currentroom + 1]
-			global.currentroom += 1
+		var next_room = clamp(global.currentroom + 1,0,array_length(global.rooms)-1)
+		
+		if is_struct(global.rooms[next_room]) {
+			if global.rooms[next_room].room_asset == target_rm {
+				global.currentroom += 1
+			}		
+		}
 		
 		tran.usetarget = true
 		tran.enID = enID 

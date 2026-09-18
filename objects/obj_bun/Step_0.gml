@@ -66,7 +66,7 @@ if collision && !player.safe {
 }
 
 if global.floor != -1 {
-	stillhere = !array_contains(global.saferoomslist,global.rooms[global.currentroom])
+	stillhere = !array_contains(tag_get_asset_ids("room_safe", asset_room),global.rooms[global.currentroom].room_asset)
 	
 	owner.still_here = stillhere
 }

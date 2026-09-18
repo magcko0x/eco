@@ -11,7 +11,15 @@ roomgoto = 0
 target_x = 0
 target_y = 0
 enID = 0
-target_rm = global.rooms[global.currentroom + 1]
+
+var next_room = clamp(global.currentroom + 1,0,array_length(global.rooms)-1)
+
+if is_struct(global.rooms[next_room]) {
+	target_rm = global.rooms[next_room].room_asset
+} else {
+	target_rm = rm_start	
+}
+
 transitionspeed = 30
 
 cursor = 1

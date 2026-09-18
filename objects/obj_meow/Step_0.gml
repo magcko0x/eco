@@ -66,6 +66,7 @@ if global.interact {
     		audio_stop_sound(farawaysfx)
             audio_play_sound(snd_punch,0,false,1,0,random_range(0.7,1.2))
     		instance_create_depth(x,y,-10000,obj_flash)
+			alarm[0] = 30
     	}
     	
     	var xdiff = ipx-x;
@@ -86,19 +87,5 @@ if global.interact {
     
     if state = "DEFEAT" {
     	deac = true
-        var xdiff = ipx-x;
-    	var ydiff = ipy-y;
-    	var dir = point_direction(x,y,ipx,ipy);
-    	var dist = point_distance(x,y,ipx,ipy);
-        
-        add++
-        
-        x += lengthdir_x(min(spd,abs(xdiff)),dir) + cos(add/10) * 4;
-        y += lengthdir_y(min(spd,abs(ydiff)),dir) + sin(add/10) * 4;
-        
-        if dist < 32 {
-            instance_destroy()
-        }
-    
     }
 }

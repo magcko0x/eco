@@ -5,7 +5,8 @@ prevwatered = watered
 growingitem = false
 growitemlist = [
 		[obj_credit,65],
-		[obj_itempickup,50]
+		[obj_itempickup,50],
+		[obj_syringe,25],
 ]
 
 itemgrown = weighted_random(growitemlist)
