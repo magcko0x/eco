@@ -1,17 +1,11 @@
 randomize()
 
-if !variable_global_exists("backfromdeath") {
-	global.backfromdeath = false	
-}
 
-if !global.backfromdeath {
-	global.floor = -1
-}
+global.floor = "lobby"
 
 audio_falloff_set_model(audio_falloff_linear_distance);
 
 global.credits = 0
-global.ultmaxfloor = 1
 global.currentroom = -1
 global.fog = false
 global.music = -1
@@ -28,10 +22,11 @@ global.backstagex = 0;
 global.backstagey = 0;
 global.backstage  = [];
 
-load_saves();
+load_saves()
+
+global.nextfloor = global.unlockedfloors[0]
 
 createbackstage(50,50);
-
 
 global.inbackstage = false
 
@@ -80,3 +75,7 @@ maxzoom = 1
 
 global.canpause = true
 global.hideinventory = false
+
+if !variable_global_exists("backfromdeath") {
+	global.backfromdeath = false	
+}

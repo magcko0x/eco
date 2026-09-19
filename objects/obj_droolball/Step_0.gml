@@ -11,10 +11,32 @@ if global.interact {
 		z = 0
 		zspd = 0
 		
-		if !place_meeting(x,y,obj_drool)
-			instance_create_depth(( x div 32 ) * 32,( y div 32 ) * 32,depth,obj_drool)
+		var _grid_x = (x div 32) * 32
+		var _grid_y = (y div 32) * 32
 		
-		part_particles_burst(psystem[0],( x div 32 ) * 32,( y div 32 ) * 32,part_drool)
+		x = _grid_x
+		y = _grid_y
+		
+		
+		mask_index = spr_droolmask
+		
+		if !place_meeting(x,y,obj_drool) && !place_meeting(x,y,tag_get_asset_ids("solid",asset_object)){
+			if layer_exists("Tiles") {
+				var _lay_id = layer_get_id("Tiles");
+				var _tile_id = layer_tilemap_get_id(_lay_id);
+				var _tile = tilemap_get(_tile_id, x div 32, y div 32)
+				if tile_get_empty(_tile) {
+					instance_destroy()
+				}
+			}			
+			
+			if instance_exists(id)
+				instance_create_depth(( x div 32 ) * 32,( y div 32 ) * 32,depth,obj_drool)
+		}
+		
+		mask_index = spr_droolballmask
+		
+		part_particles_burst(psystem[0],( x div 32 ) * 32,( y div 32 ) * 32,part_burst)
 		
 		part_system_depth(psystem[0],-9000)
 		

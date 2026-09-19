@@ -45,10 +45,20 @@ if !still_here {
 				var room_to_replace = global.rooms[target_room].room_asset
 				var room_to_replace_tags = asset_get_tags(room_to_replace, asset_room)
 				
+				var filtered_tags = []
+				
 				var safe_rooms_pool = []
 				
+				for (var i = 0; i < array_length(room_to_replace_tags); i++) {
+					var current_tag = room_to_replace_tags[i]
+					
+					if string_pos("floor_", current_tag) > 0 {
+						array_push(filtered_tags,current_tag)
+					}
+				}
+				
 				for (var i = 0; i < array_length(safe_rooms_base); i++) {
-					if asset_has_tags(safe_rooms_base[i], room_to_replace_tags, asset_room) {
+					if asset_has_tags(safe_rooms_base[i], filtered_tags, asset_room) {
 						array_push(safe_rooms_pool, safe_rooms_base[i])
 					}
 				}

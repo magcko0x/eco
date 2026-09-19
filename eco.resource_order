@@ -131,6 +131,7 @@
     {"name":"obj_flash","order":7,"path":"objects/obj_flash/obj_flash.yy",},
     {"name":"obj_flexgridspaces","order":10,"path":"objects/obj_flexgridspaces/obj_flexgridspaces.yy",},
     {"name":"obj_flexparts","order":7,"path":"objects/obj_flexparts/obj_flexparts.yy",},
+    {"name":"obj_floorselector_head","order":17,"path":"objects/obj_floorselector_head/obj_floorselector_head.yy",},
     {"name":"obj_floorselector","order":9,"path":"objects/obj_floorselector/obj_floorselector.yy",},
     {"name":"obj_floorsign","order":5,"path":"objects/obj_floorsign/obj_floorsign.yy",},
     {"name":"obj_flower_pot","order":15,"path":"objects/obj_flower_pot/obj_flower_pot.yy",},

@@ -1,5 +1,5 @@
-var _hspd = lengthdir_x(move_speed * 2, dir)
-var _vspd = lengthdir_y(move_speed * 2, dir)
+var _hspd = lengthdir_x(spd * 2, dir)
+var _vspd = lengthdir_y(spd * 2, dir)
 
 var _total_speed = point_distance(0, 0, _hspd, _vspd)
 

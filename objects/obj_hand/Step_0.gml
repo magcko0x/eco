@@ -10,6 +10,13 @@ if global.interact {
 	if active {
 		state()
 	}
+	
+	if invincibletimer > 0 {
+		visible = flicker()
+		invincibletimer--
+	} else {
+		visible = true	
+	}
 }
 
 if instance_exists(obj_lightsout) {

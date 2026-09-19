@@ -175,6 +175,7 @@
     {"id":{"name":"obj_flash","path":"objects/obj_flash/obj_flash.yy",},},
     {"id":{"name":"obj_flexgridspaces","path":"objects/obj_flexgridspaces/obj_flexgridspaces.yy",},},
     {"id":{"name":"obj_flexparts","path":"objects/obj_flexparts/obj_flexparts.yy",},},
+    {"id":{"name":"obj_floorselector_head","path":"objects/obj_floorselector_head/obj_floorselector_head.yy",},},
     {"id":{"name":"obj_floorselector","path":"objects/obj_floorselector/obj_floorselector.yy",},},
     {"id":{"name":"obj_floorsign","path":"objects/obj_floorsign/obj_floorsign.yy",},},
     {"id":{"name":"obj_flower_pot","path":"objects/obj_flower_pot/obj_flower_pot.yy",},},

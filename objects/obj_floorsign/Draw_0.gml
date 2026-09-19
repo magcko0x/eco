@@ -1,5 +1,3 @@
-number = global.floor + 2
-
 draw_sprite(spr_floorsignframe,0,x,y);
 
 gpu_set_blendenable(false)
@@ -21,11 +19,13 @@ if scroll < 24 {
 	scroll += 0.125
 } else scroll = 0
 
-
-
-
 draw_sprite(spr_doorsignbackground,0,x,y)
-var num = string_replace_all(string_format(number,2,0)," ","0")
+
+var index = 0
+
+if instance_exists(obj_floorselector_head) index = obj_floorselector_head.index
+
+var num = string_replace_all(string_format(index + 1,2,0)," ","0")
 
 
 d[1] = real(string_char_at(num,1))

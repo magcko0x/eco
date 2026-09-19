@@ -22,6 +22,7 @@
     {"name":"inst_52FF3023","path":"rooms/rm_lobby_pre_elevator/rm_lobby_pre_elevator.yy",},
     {"name":"inst_6651C081","path":"rooms/rm_lobby_pre_elevator/rm_lobby_pre_elevator.yy",},
     {"name":"inst_62BBA438","path":"rooms/rm_lobby_pre_elevator/rm_lobby_pre_elevator.yy",},
+    {"name":"inst_1717E848","path":"rooms/rm_lobby_pre_elevator/rm_lobby_pre_elevator.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -52,6 +53,7 @@
         {"$GMRInstance":"v4","%Name":"inst_62BBA438","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_62BBA438","objectId":{"name":"obj_floorselector","path":"objects/obj_floorselector/obj_floorselector.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_floorselector","path":"objects/obj_floorselector/obj_floorselector.yy",},"propertyId":{"name":"mode","path":"objects/obj_floorselector/obj_floorselector.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-180.0,"scaleX":1.0,"scaleY":1.0,"x":264.0,"y":80.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1717E848","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1717E848","objectId":{"name":"obj_floorselector_head","path":"objects/obj_floorselector_head/obj_floorselector_head.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-16.0,"y":0.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"BG","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_B7B26C4","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_B7B26C4","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_lobby2bg","path":"sprites/spr_lobby2bg/spr_lobby2bg.yy",},"x":0.0,"y":0.0,},

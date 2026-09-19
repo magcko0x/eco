@@ -16,7 +16,7 @@ if global.interact
 		}
 	}
 	
-	if place_meeting(x,y,obj_hand) && !goaway && obj_hand.state != obj_hand.disabled && !harmless {
+	if place_meeting(x,y,obj_hand) && !goaway && obj_hand.state != obj_hand.disabled && !harmless && obj_hand.invincibletimer <= 0 {
 		obj_hand.state = obj_hand.disabled
 		obj_hand.shake_strength = 4
 		var hitsfx = audio_play_sound_at(snd_tentacle_hit,x,y,0,200,400,1,false,0,1,0,random_range(0.5,2))

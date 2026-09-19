@@ -9,7 +9,7 @@ if !active {
 if chance = 0 {
 	if !active {
 		active = true
-		lastroom = global.currentroom + irandom_range(5,10)
+		lastroom = global.currentroom + irandom_range(3,5)
 	}
 }
 

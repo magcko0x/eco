@@ -13,9 +13,10 @@ function create_save() {
 	if !file_exists("save.sav") {
 		var savestruct = {
 			player: [0, 0, 0],
-			maxfloor: -1,
+			unlockedfloors: ["floor_industry"],
+			beatenfloors: [],
 			unlockedentities: [],
-			time_capsule_item: -1 // Sets default to empty
+			time_capsule_item: -1
 		}
 		
 		var structjson = json_stringify(savestruct, true)
@@ -41,7 +42,8 @@ function custom_save() {
 
 	var savestruct = {
 		player: [global.playerhead, global.playerbody, global.playerpants],
-		maxfloor: global.maxfloor,
+		unlockedfloors: global.unlockedfloors,
+		beatenfloors: global.beatenfloors,
 		unlockedentities: global.unlockedentities,
 		time_capsule_item: _saved_item 
 	}
@@ -70,16 +72,17 @@ function load_saves() {
 	if savestruct != undefined && is_struct(savestruct) {
 		
 		if struct_exists(savestruct, "player") && is_array(savestruct.player) {
-			global.playerhead  = savestruct.player[0]
-			global.playerbody  = savestruct.player[1]
+			global.playerhead = savestruct.player[0]
+			global.playerbody = savestruct.player[1]
 			global.playerpants = savestruct.player[2]
 		} else {
-			global.playerhead  = 0
-			global.playerbody  = 0
+			global.playerhead = 0
+			global.playerbody = 0
 			global.playerpants = 0
 		}
 
-		global.maxfloor         = struct_get(savestruct, "maxfloor") ?? -1
+		global.unlockedfloors = struct_get(savestruct, "unlockedfloors") ?? ["floor_industry"]
+		global.beatenfloors = struct_get(savestruct, "beatenfloors") ?? [] 
 		global.unlockedentities = struct_get(savestruct, "unlockedentities") ?? []
 
 		var backstage_wrapper = struct_get(savestruct, "backstage") ?? undefined
@@ -127,7 +130,9 @@ function load_saves() {
 		global.maxfloor = -1
 		global.unlockedentities = []
 		global.backstage = []
-		global.time_capsule_item = -1 
+		global.time_capsule_item = -1
+		global.unlockedfloors = ["floor_industry"]
+		global.beatenfloors = []
 	}
 }
 
@@ -139,12 +144,12 @@ function save_entity_to_cafeteria(name) {
 }
 
 function createselectionpool(width, height) {
-    var selection_pool = []; // Start with a clean, empty array
+	var selection_pool = []
     
-    // Correctly loop using the width and height numbers passed to the function
+
     for (var j = 0; j < height; j++) {
         for (var i = 0; i < width; i++) {
-            array_push(selection_pool, [i, j]); // Push coordinate pairs
+            array_push(selection_pool, [i, j])
         }
     }
     

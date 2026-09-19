@@ -1,4 +1,4 @@
-if global.maxfloor < 1 {
+if array_length(global.beatenfloors) == 0 {
 	locked = true
 }
 

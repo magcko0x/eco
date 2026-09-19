@@ -1,7 +1,3 @@
-global.part = 0
-
-reset_rooms()
-//entity_picker()
 generate_rooms()
 
 if !instance_exists(obj_roomhandler)

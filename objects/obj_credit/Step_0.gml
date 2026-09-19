@@ -1,6 +1,8 @@
 if global.interact {
 	
-	if (CLICKED || RANINTO) {
+	deac = global.credits >= 999
+	
+	if (CLICKED || RANINTO) && !deac{
 		
 		global.credits += amount
 		

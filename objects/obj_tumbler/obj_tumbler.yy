@@ -39,5 +39,9 @@
     "path":"sprites/spr_tumbler/spr_tumbler.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "movingentity",
+    "infectable",
+  ],
   "visible":true,
 }

@@ -3,6 +3,17 @@ setdepth()
 setdepth()
 
 if global.interact {
+	
+	var slowdown = instance_place(x,y,tag_get_asset_ids("slowdown",asset_object)) 
+	
+	if slowdown {
+		slowdownspd = slowdown.slowdownspd	
+	} else {
+		slowdownspd = 0
+	}
+	
+	spd = clamp(spd - slowdownspd,1,99999)
+	
 	audio_emitter_position(emitter, x, y, 0)
 
 	var _check_dist = 6
@@ -26,8 +37,8 @@ if global.interact {
 	}
 
 	if !_hit_wall {
-		var _hspd = lengthdir_x(move_speed, dir)
-		var _vspd = lengthdir_y(move_speed, dir)
+		var _hspd = lengthdir_x(spd, dir)
+		var _vspd = lengthdir_y(spd, dir)
 	
 		move_and_collide(_hspd, _vspd, collist)
 	} else {
@@ -35,13 +46,24 @@ if global.interact {
 	
 		dir = _normal + 90
 
-		var _hspd = lengthdir_x(move_speed, dir)
-		var _vspd = lengthdir_y(move_speed, dir)
+		var _hspd = lengthdir_x(spd, dir)
+		var _vspd = lengthdir_y(spd, dir)
 	
 		var _glue_hspd = lengthdir_x(2, _normal - 180)
 		var _glue_vspd = lengthdir_y(2, _normal - 180)
 	
 		move_and_collide(_hspd + _glue_hspd, _vspd + _glue_vspd, collist)
+	}
+	
+	var tumbler_colliding = instance_place(x,y,obj_tumbler)
+	
+	if place_meeting(x,y,tumbler_colliding) {
+		var _push_dir = point_direction(tumbler_colliding.x, tumbler_colliding.y, x, y)
+
+		var _kb_x = lengthdir_x(32, _push_dir)
+		var _kb_y = lengthdir_y(32, _push_dir)		
+		
+		move_and_collide(_kb_x, _kb_y, other.collist)		
 	}
 
 	dir = (dir + 360) % 360
@@ -49,7 +71,7 @@ if global.interact {
 	var player = instance_place(x, y, obj_player)
 
 	if player != noone {
-		if player.myhand.state == player.myhand.free {
+		if player.myhand.state == player.myhand.free && player.myhand.invincibletimer <= 0{
 			with player {
 				var _push_dir = point_direction(other.x, other.y, x, y)
 
@@ -59,11 +81,9 @@ if global.interact {
 				move_and_collide(_kb_x, _kb_y, other.collist)
 			
 				myhand.state = myhand.disabled
+				
 			
-				var flash = instance_create_depth(x, y, depth, obj_flash)
-				flash.fade_color = c_red
-			
-				audio_play_sound(snd_punch, 0, false, 1, 0, random_range(0.8, 1.2))
+				audio_play_sound(snd_hand_disable, 0, false)
 			}
 		}
 	}

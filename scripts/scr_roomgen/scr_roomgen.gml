@@ -1,89 +1,17 @@
 //Room generation thingies
-global.rooms = array_create(101,-1)
-global.darkrooms = array_create(101,false)
-
+global.rooms = []
 
 function reset_rooms() {
 	global.rooms = []
-}
-
-function entity_picker() {
-	
-	var entitylist;
-	
-	entitylist = [obj_bunhandler,obj_tendrilhandler,obj_rothandler,obj_shihandler]
-	
-	for (var i = 0; i < array_length(entitylist); i++)
-		if !instance_exists(entitylist[i])
-			instance_create_depth(x,y,depth,entitylist[i])
-	
-}
-
-function get_rooms_list(floors,part) {
-	switch floors {
-		case 0:
-			switch part {
-				case 0:
-					global.importantroomslist = [rm_f1_intro,rm_elevator,rm_f1_p2_transition]
-
-					global.saferoomslist = [rm_f1_safe1,rm_f1_safe2,rm_f1_safe3]
-
-					global.basicroomslist = [rm_f1_basic,rm_f1_basic2,rm_f1_basic3,rm_f1_hallway,rm_f1_L];
-			
-					global.keyroomslist = [rm_f1_key1,rm_f1_key2,rm_f1_key3]
-					
-                break;
-				
-				case 1:
-					global.importantroomslist = [rm_f1_intro,rm_elevator,rm_f1_p2_transition]
-
-					global.saferoomslist = [rm_f1_p2_safe1,rm_f1_p2_safe2,rm_f1_p2_safe3]
-
-					global.basicroomslist = [rm_f1_p2_basic,rm_f1_p2_basic2,rm_f1_p2_basic3];
-			
-					global.keyroomslist = [rm_f1_p2_key1,rm_f1_p2_key2]
-					
-                break;
-			}
-			
-		break;
-    
-    
-		case 1:
-			switch part {
-				case 0:
-					global.importantroomslist = [rm_f2_intro,rm_elevator,rm_f2_transition]
-
-					global.saferoomslist = [rm_f2_safe1,rm_f2_safe2]
-
-					global.basicroomslist = [rm_f2_basic1,rm_f2_basic2,rm_f2_basic3,rm_f2_basic4]
-			
-					global.keyroomslist = [rm_f2_flower1,rm_f2_flower2,rm_f2_flower3]
-					
-                break;
-				
-				case 1:
-					global.importantroomslist = [rm_f2_intro,rm_elevator,rm_f2_transition]
-
-					global.saferoomslist = [rm_f1_p2_safe1,rm_f1_p2_safe2,rm_f1_p2_basic3]
-
-					global.basicroomslist = [rm_f1_p2_basic,rm_f1_p2_basic2,rm_f1_p2_basic3]
-			
-					global.keyroomslist = [rm_f1_p2_key1,rm_f1_p2_key2]
-					
-                break;
-			}
-			
-		break; 
-	}
-    
 }
 
 function generate_rooms() {
     
     reset_rooms()
 
-	if global.floor = 0 {
+	if global.floor = "floor_industry" {
+		
+		global.nextfloor = "floor_floating_plateau"
 		
 		for (var j = 0; j < 2; j++) {
 			
@@ -142,9 +70,10 @@ function generate_rooms() {
 		
 	}
 	
-	if global.floor = 1 {
+	if global.floor = "floor_floating_plateau" {
 		
-			
+		global.nextfloor = "floor_floating_plateau"
+		
 		var initial_list = tag_get_asset_ids("floor_plateau", asset_room)
 		var basic_room_list = []
 		var key_room_list = []			

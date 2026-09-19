@@ -1,0 +1,1 @@
+global.nextfloor = available_floors[index]

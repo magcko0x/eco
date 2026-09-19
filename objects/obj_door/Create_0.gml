@@ -14,10 +14,10 @@ enID = 0
 
 var next_room = clamp(global.currentroom + 1,0,array_length(global.rooms)-1)
 
-if is_struct(global.rooms[next_room]) {
+if array_length(global.rooms) > 0 && is_struct(global.rooms[next_room]) {
 	target_rm = global.rooms[next_room].room_asset
 } else {
-	target_rm = rm_start	
+	target_rm = rm_start
 }
 
 transitionspeed = 30

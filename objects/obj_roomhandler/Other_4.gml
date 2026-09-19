@@ -19,14 +19,19 @@ if global.floor != -1 {
 	
 	
 	//music switch
+
 	
-	var music_list = 
-	[
-		mus_friendofafriend,
-		mus_deviled_gardens
-	]
+	var current_floor_music = -1
 	
-	var current_floor_music = music_list[clamp(global.floor,0,array_length(music_list)-1)]
+	switch global.floor {
+		case "floor_industry":
+			current_floor_music = mus_friendofafriend
+			break;
+			
+		case "floor_floating_plateau":
+			current_floor_music = mus_deviled_gardens
+			break;			
+	}
 	
 	if global.music != current_floor_music
 		global.music = current_floor_music	
@@ -36,13 +41,17 @@ if global.floor != -1 {
 	
 	if global.currentroom == 0 {
 		
-		var titlecard_list = 
-		[
-			spr_floor_1_name,
-			spr_floor_2_name
-		]
-		
-		var titlecardsprite = titlecard_list[clamp(global.floor,0,array_length(titlecard_list)-1)]
+		var titlecardsprite = spr_null
+	
+		switch global.floor {
+			case "floor_industry":
+				titlecardsprite = spr_floor_1_name
+				break;
+			
+			case "floor_floating_plateau":
+				titlecardsprite = spr_floor_2_name
+				break;			
+		}
 		
 		var titlecard = instance_create_depth(0,0,depth,obj_titlecard)
 		titlecard.titlecardsprite = titlecardsprite
@@ -52,7 +61,7 @@ if global.floor != -1 {
 		if struct_exists(global.rooms[global.currentroom],"dark") {
 			if global.rooms[global.currentroom].dark = true {
 				instance_create_depth(x,y,depth,obj_lightsout)
-			    if global.floor = 1 && instance_exists(obj_lightsout){
+			    if global.floor = "floor_floating_plateau" && instance_exists(obj_lightsout){
 			        gradient = layer_get_fx("Background")
         
 			        if gradient != -1 {

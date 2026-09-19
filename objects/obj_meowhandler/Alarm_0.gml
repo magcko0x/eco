@@ -26,7 +26,7 @@ switch chancer {
         break
 }
 	
-var meow = meowcounter > 3 ? instance_create_depth(xx,yy,depth,choose(obj_meow,obj_purr)) : instance_create_depth(xx,yy,depth,obj_meow)
+var meow = meowcounter > 5 ? instance_create_depth(xx,yy,depth,choose(obj_meow,obj_purr)) : instance_create_depth(xx,yy,depth,obj_meow)
 
 if meowsleft > 0 {
     meowsleft--

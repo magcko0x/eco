@@ -1,4 +1,4 @@
-if global.floor = 1 {
+if global.floor = "floor_floating_plateau" {
     gradient = layer_get_fx("Background")
     
     if instance_exists(obj_lightsout) {

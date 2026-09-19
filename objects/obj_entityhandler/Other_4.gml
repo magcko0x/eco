@@ -1,7 +1,7 @@
 if !global.inbackstage {
 	switch global.floor {
 	
-		case 0:
+		case "floor_industry":
 		
 			entitylist = [
 				[obj_rothandler, -1],
@@ -25,7 +25,7 @@ if !global.inbackstage {
 
 	    break;
 
-	    case 1:
+	    case "floor_floating_plateau":
         
 			entitylist = [
 				[obj_rothandler, -1],

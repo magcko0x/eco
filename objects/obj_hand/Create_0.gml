@@ -35,6 +35,8 @@ active = true
 
 drawitem = false
 
+invincibletimer = 0
+
 free = function() {
 	x = mouse_x
 	y = mouse_y
@@ -132,6 +134,7 @@ disabled = function() {
 		audio_play_sound(snd_hand_enable,0,false)
 		state = free
 		iframe = 300
+		invincibletimer = 60
 		shake_strength = 4
 	}
 }
