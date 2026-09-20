@@ -35,7 +35,7 @@ function generate_rooms() {
 			}
 
 			
-			for (var i = 0 + (j*50); i < 50 * (j+1); i++) {
+			for (var i = 0 + (j*50); i <= 50 * (j+1); i++) {
 					
 					var chancer = irandom(100)
 			
@@ -63,10 +63,10 @@ function generate_rooms() {
 		
 		global.rooms[0].dark = false
 		global.rooms[50].dark = true
-		global.rooms[99].dark = false
+		global.rooms[100].dark = false
 		global.rooms[0].room_asset = rm_f1_intro
 		global.rooms[50].room_asset = rm_f1_p2_transition
-		global.rooms[99].room_asset = rm_elevator
+		global.rooms[100].room_asset = rm_elevator
 		
 	}
 	
@@ -94,7 +94,7 @@ function generate_rooms() {
 		}
 
 			
-		for (var i = 0; i < 100; i++) {
+		for (var i = 0; i <= 100; i++) {
 					
 				var chancer = irandom(100)
 			
@@ -121,10 +121,10 @@ function generate_rooms() {
 		
 		global.rooms[0].dark = false
 		global.rooms[50].dark = true
-		global.rooms[99].dark = false
+		global.rooms[100].dark = false
 		global.rooms[0].room_asset = rm_f2_intro
 		global.rooms[50].room_asset = rm_f2_transition
-		global.rooms[99].room_asset = rm_elevator
+		global.rooms[100].room_asset = rm_elevator
 		
 	}
 }

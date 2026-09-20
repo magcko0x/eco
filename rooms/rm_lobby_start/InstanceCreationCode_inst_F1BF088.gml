@@ -1,1 +1,1 @@
-target_rm = rm_lobby_character
+target_rm = rm_lobby_cafeteria

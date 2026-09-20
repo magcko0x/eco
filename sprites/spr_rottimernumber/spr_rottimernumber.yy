@@ -23,6 +23,8 @@
     {"$GMSpriteFrame":"v1","%Name":"0a61ed7e-8b58-4363-a843-99fb4523d057","name":"0a61ed7e-8b58-4363-a843-99fb4523d057","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"bf41d360-c781-499d-9025-30bb06d6706a","name":"bf41d360-c781-499d-9025-30bb06d6706a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"d28e1da2-c2bf-430f-b008-940777966570","name":"d28e1da2-c2bf-430f-b008-940777966570","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1d1c488e-9659-460b-baf4-3f1cfc898e90","name":"1d1c488e-9659-460b-baf4-3f1cfc898e90","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b2de166a-f04a-4c0c-a46b-b4a022d26528","name":"b2de166a-f04a-4c0c-a46b-b4a022d26528","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -59,7 +61,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":11.0,
+    "length":13.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -111,6 +113,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d28e1da2-c2bf-430f-b008-940777966570","path":"sprites/spr_rottimernumber/spr_rottimernumber.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"49e68ed5-1a00-489f-8b70-2614fd02ad68","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1d1c488e-9659-460b-baf4-3f1cfc898e90","path":"sprites/spr_rottimernumber/spr_rottimernumber.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b175edaf-9264-4e1e-bde2-3186517a2f97","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b2de166a-f04a-4c0c-a46b-b4a022d26528","path":"sprites/spr_rottimernumber/spr_rottimernumber.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"10a6c7f3-da39-4d72-926f-1ee082c4fcb6","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

@@ -36,4 +36,4 @@ stringheight = string_height(text[page])
 //boxwidth = sprite_get_width(spr_textbox)-2*xbuffer\
 
 //Text codes
-textcode = ["/default","/frown","/sad","/angry","/mischievious","/horny","/surprised"]
+textcode = ["/default","/frown","/sad","/angry","/mischievious","/horny","/surprised","/laughing"]

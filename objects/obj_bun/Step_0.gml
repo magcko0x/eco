@@ -38,9 +38,8 @@ if instance_exists(door) {
 
 if place_meeting(x,y,obj_door) {
     if instance_exists(obj_bunhandler)
-    	if owner.bun_amount = 0 && !stillhere
-    		owner.bun_gone = true
-	
+		owner.bun_gone = true
+		
 	if !instance_exists(obj_lightsout) {
 		instance_create_depth(-32,-32,depth,obj_lightsout)
 		var myflash = instance_create_depth(-32,-32,depth,obj_flash)
@@ -56,7 +55,9 @@ if place_meeting(x,y,obj_door) {
 	exit
 }
 
-collision = collision_rectangle(0,y-14,room_width,y+40,obj_player,false,true)
+dbox.x1 = x - room_width/2; dbox.y1 = y - 14; dbox.x2 = x + room_width/2; dbox.y2 = y + 40
+
+collision = collision_ellipse(dbox.x1,dbox.y1,dbox.x2,dbox.y2,obj_player,false,true)
 
 if collision && !player.safe {
 	if player.state != player.dead {
@@ -65,10 +66,8 @@ if collision && !player.safe {
 	}
 }
 
-if global.floor != -1 {
-	stillhere = !array_contains(tag_get_asset_ids("room_safe", asset_room),global.rooms[global.currentroom].room_asset)
-	
-	owner.still_here = stillhere
-}
+y = ystart + sin(current_time/1000) * 10
+
+x = xstart + cos(current_time/1000) * 20
 
 audio_emitter_position(emitter, x, y, 0)

@@ -1,5 +1,5 @@
 active = false
-lastroom = 0
+roomcount = 0
 chance = 10
 meowsleft = 0
 meowcounter = -1

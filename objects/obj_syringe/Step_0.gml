@@ -9,13 +9,9 @@ if global.interact {
 		if instance_exists(obj_rottimer) {
 			var me = self
 			
-			var myeffect = instance_create_depth(0,0,depth,obj_rottimeraddthingy)
+			var myeffect = instance_create_depth(0,0,-9000,obj_rottimeraddthingy)
 			
-			if timeradd = MINUTE/2 {
-				myeffect.variant = 0
-			} else {
-				myeffect.variant = 1
-			}
+			myeffect.timer = timeradd
 			
 			with obj_rottimer {
 				timer += me.timeradd	

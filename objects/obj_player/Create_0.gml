@@ -64,8 +64,21 @@ dead = function ()
 		audio_stop_all()
 		
 		global.inbackstage = false
-		global.floor = -1
+		global.floor = "lobby"
+		
+		for (var i = 0; i < array_length(obj_playerhandler.playerinventory); i++) {
+			obj_playerhandler.playerinventory[i] = -1
+		}
+		
+		var entities = tag_get_asset_ids("handler",asset_object)
 	
+		for (var i = 0; i < array_length(entities);i++)
+			instance_destroy(entities[i])		
+		
+		obj_inventory.showcredits = false
+		
+		global.credits = 0
+		
 		if !instance_exists(obj_transition) {
 			var tran = instance_create_depth(0,0,-8000,obj_transition)
 			tran.current_alpha = 0.9
@@ -74,15 +87,7 @@ dead = function ()
 			tran.roomgoto = 0
 			tran.target_rm = rm_death
 			tran.changecurrentroom = true
-		}
-		
-		for (var i = 0; i < array_length(obj_playerhandler.playerinventory); i++) {
-			obj_playerhandler.playerinventory[i] = -1
-		}
-		
-		obj_inventory.showcredits = false
-		
-		global.credits = 0
+		}		
 	}
 	
 }

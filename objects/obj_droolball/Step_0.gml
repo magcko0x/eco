@@ -36,7 +36,7 @@ if global.interact {
 		
 		mask_index = spr_droolballmask
 		
-		part_particles_burst(psystem[0],( x div 32 ) * 32,( y div 32 ) * 32,part_burst)
+		part_particles_burst(psystem[0],( x div 32 ) * 32,( y div 32 ) * 32,part_drool)
 		
 		part_system_depth(psystem[0],-9000)
 		

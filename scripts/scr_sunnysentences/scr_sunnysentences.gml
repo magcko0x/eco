@@ -29,7 +29,7 @@ function get_message(){
 		[
 			"Remember what I said,",
 			"Check back when you find more people!",
-			"Love you!!"
+			"/laughingLove you!!"
 		]
 	]
 	
@@ -57,6 +57,7 @@ function get_death_message(){
 					"/frownHm? Him?",
 					"/defaultIt seems you were maimed by my dear friend, \"Bun\"!",
 					"When he makes a plan of attack, he runs so fast your head begins shaking!",
+					"And at the same time, his mouth starts closing in on your vision!",
 					"If that happens, it is imperative you run forward a couple of rooms until you find one with a safe zone.",
 					"/frownI don't have much control over this... place, but...",
 					"/defaultWith the little I COULD do, I sprouted some flowers for you to indicate a safe zone!",
@@ -70,13 +71,26 @@ function get_death_message(){
 		case "shi":
 			textlist = [
 				[
-					"What got you now?",
+					
+					"Hi, honey!!!",
+					"Who got you now?",
 					"/frownOh.",
 					"/defaultThis should be simple enough.",
-					"You died to the bringer of death otherwise known as 'Shi'.",
-					"When Shi is in the same room as you...",
-					"All you must do is avoid its crosshair.",
-					"That is all there is to say on the matter."
+					"You have been killed by old college roomate, also known as \"Shi\".",
+					"Years of being friends with Rot have made her a bit more of a...",
+					"/frownAnd excuse me for my language here,",
+					"/angry\"Jerk\".",
+					"/defaultWhich had resulted in her...",
+					"/angry\"Erratic behaviour\".",
+					"/defaultWhen Shi is in the same room as you, you must simply dodge her attacks!",
+					"She will circle a little bit before attacking as a warning,",
+					"And when she does, she'll dash straight for you!",
+					"Luckily, my degree in physics had payed off, as I can calculate exactly where she'll land and mark her crosshair on the ground for you!",
+					"So you must simply dodge the crosshair and Shi as when she is dashing!",
+					"That should be about it.",
+					"/frownOh, and when you get back there,",
+					"/mischieviousKnock 'em dead, honey!",
+					"Hehe!"
 				]
 			]
 		break;	

@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sunny",
-    "path":"folders/Sprites/Entities/Sunny.yy",
+    "name":"Sunny eyes",
+    "path":"folders/Sprites/Entities/Sunny/Sunny eyes.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

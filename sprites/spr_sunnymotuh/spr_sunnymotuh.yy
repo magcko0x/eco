@@ -51,8 +51,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"Sunny",
-    "path":"folders/Sprites/Entities/Sunny.yy",
+    "name":"Sunny mouths",
+    "path":"folders/Sprites/Entities/Sunny/Sunny mouths.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

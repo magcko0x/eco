@@ -84,4 +84,9 @@ switch expression {
 		eyesprite = spr_sunnyeyesurprised
 		mouthsprite = spr_sunnymouthsurprised
 	break;
+	
+	case "laughing":
+		eyesprite = spr_sunnyeye_closed
+		mouthsprite = spr_sunnymouth
+	break;	
 }

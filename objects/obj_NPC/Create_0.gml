@@ -42,3 +42,5 @@ spawntext = function() {
 		mytalker.speechsound = speechsound
 	}	
 }
+
+depthoffset = 0

@@ -35,6 +35,11 @@ if (string_pos(textcode[6], text[page]) > 0) {
     creator.expression = "surprised"
 }
 
+// /laughing
+if (string_pos(textcode[7], text[page]) > 0) {
+    creator.expression = "laughing"
+}
+
 if restart global.interact = true
 
 //pagepass
@@ -54,8 +59,7 @@ if restart global.interact = true
 				creator.expression = "default"
 			} else {
 				creator.expression = "default"
-				global.backfromdeath = true
-				global.floor = clamp(global.floor - 1,-1,9999)				
+				global.backfromdeath = true			
 				game_restart()
 			}
 		}
@@ -75,7 +79,6 @@ if restart global.interact = true
 		else {
 			creator.expression = "default"
 			global.backfromdeath = true
-			global.floor = clamp(global.floor - 1,-1,9999)
 			game_restart()
 		}
 	}

@@ -237,5 +237,3 @@ scurry = function() {
 }
 
 state = scurry
-
-save_entity_to_cafeteria("myxo")

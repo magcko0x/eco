@@ -52,6 +52,3 @@ add = 0
             yy = room_height - sprite_height 
             break
     }
-    
-	
-save_entity_to_cafeteria("meow")

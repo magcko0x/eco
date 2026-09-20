@@ -99,5 +99,3 @@ charge = function() {
 }
 
 state = circling
-
-save_entity_to_cafeteria("shi")

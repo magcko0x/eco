@@ -6,6 +6,4 @@ cursor = 6
 
 reverse = false
 
-save_entity_to_cafeteria("tim")
-
 image_speed = random_range(0.5,1)

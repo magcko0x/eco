@@ -1,5 +1,5 @@
 buttonfunction = function () {
-	if global.floor == -1 {
+	if global.floor == "lobby" {
 		game_end()
 	} else {
 		game_restart()	

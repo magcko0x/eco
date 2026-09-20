@@ -13,10 +13,7 @@
     "name":"Deco",
     "path":"folders/Objects/Effects/Deco.yy",
   },
-  "parentObjectId":{
-    "name":"obj_collision",
-    "path":"objects/obj_collision/obj_collision.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,6 +29,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"mode","filters":[],"listItems":[],"multiselect":false,"name":"mode","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"depthoffset","filters":[],"listItems":[],"multiselect":false,"name":"depthoffset","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
@@ -42,7 +40,7 @@
   },
   "spriteMaskId":null,
   "tags":[
-    "movingentity",
+    "solid",
   ],
   "visible":true,
 }

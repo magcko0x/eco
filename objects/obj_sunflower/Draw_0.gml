@@ -27,7 +27,7 @@ for (var j = 1; j > -1; j--)
 	}
 
 if !deac
-	draw_selected(spr_sunnyhead)
+	draw_selected(spr_sunnyhead,0)
 draw_sprite(spr_sunnyhead,0,x,y)
 
 for (var i = -1; i < 2; i++) {

@@ -12,7 +12,5 @@ ambsfx = audio_play_sound_at(snd_tendril_ambience,x,y,0,200,400,1,false,0,1,rand
 
 alarm[0] = 2
 
-save_entity_to_cafeteria("tendril")
-
 emitter = audio_emitter_create()
 audio_emitter_falloff(emitter, 96, 128, 1)

@@ -15,7 +15,7 @@ if chance = 0 {
 
 if active = true {
 	
-	meowcounter++
+	meowcounter = irandom_range(1,5)
 	
     meowsleft = clamp(meowcounter,0,8)
     

@@ -138,9 +138,32 @@ function load_saves() {
 
 function save_entity_to_cafeteria(name) {
 	if (!array_contains(global.unlockedentities, name)) {
-		array_push(global.unlockedentities, name);
+		array_push(global.unlockedentities, name)
 	}
-	custom_save();
+	custom_save()
+}
+
+function save_entities_based_on_floors() {
+	
+	var entity_pool = []
+	
+	if array_contains(global.beatenfloors,"floor_industry") {
+		entity_pool = ["rot","bun","tendril","shi","myxo"]
+		
+		if (!array_contains(global.unlockedentities, name)) {
+			array_push(global.unlockedentities, name)
+		}			
+	}
+	
+	if array_contains(global.beatenfloors,"floor_floating_plateau") {
+		entity_pool = ["meow","tumbler","tim","hopper"]
+		
+		if (!array_contains(global.unlockedentities, name)) {
+			array_push(global.unlockedentities, name)
+		}			
+	}	
+	
+	custom_save()
 }
 
 function createselectionpool(width, height) {

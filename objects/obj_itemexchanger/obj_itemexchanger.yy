@@ -13,10 +13,7 @@
     "name":"Item Exchanger",
     "path":"folders/Objects/Room things/Utter Fucking Gizmos/Item Exchanger.yy",
   },
-  "parentObjectId":{
-    "name":"obj_collision",
-    "path":"objects/obj_collision/obj_collision.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -39,5 +36,8 @@
     "path":"sprites/spr_itemexchanger/spr_itemexchanger.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "solid",
+  ],
   "visible":true,
 }

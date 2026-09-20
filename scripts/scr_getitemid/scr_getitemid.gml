@@ -173,13 +173,23 @@ global.itemlist = [
 				randomise()
 				
 				if instance_exists(obj_rottimer) {
+					
+					
+					var timeradd = irandom_range(-(MINUTE / 2), MINUTE / 1.5)
+					
+					var myeffect = instance_create_depth(0,0,-9000,obj_rottimeraddthingy)
+			
+					myeffect.timer = timeradd	
+					
 					with obj_rottimer {
 						shake_strength = 6
-						timer += irandom_range(-(MINUTE / 2), MINUTE / 2.5)
+						timer += timeradd
 						timer = clamp(timer,0,MINUTE * (99 + 59/60))						
 					}
+					
 				}
 				
+				audio_play_sound(snd_munch,0,false)
 				inventory_remove(_inventory, _slot)
 			}
 		}
@@ -194,7 +204,7 @@ global.itemlist = [
 		use_function : function(_inventory, _slot) {
 			if global.interact {
 				
-				if !(room == rm_elevator || room == rm_lobby_elevator || global.floor == -1) {
+				if !(room == rm_elevator || room == rm_lobby_elevator || global.floor == "lobby") {
 					ini_open("tempsave")
 					
 					//room
@@ -277,7 +287,7 @@ global.itemlist = [
 		use_function : function(_inventory, _slot) {
 			if global.interact {
 				
-				if !(room == rm_elevator || room == rm_lobby_elevator || global.floor == -1) {
+				if !(room == rm_elevator || room == rm_lobby_elevator || global.floor == "lobby") {
 					ini_open("tempsave")
 					
 					//room

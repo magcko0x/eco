@@ -16,6 +16,11 @@ room_block = false
 timer_multiplier = 1
 bun_active = false
 
+bun_top_overlay_y = -60
+bun_bottom_overlay_y = display_get_gui_height() + 60
+bun_overlay_shake_strength = 0
+
+
 bunreset = function() {
 
 	bun_spawn_active = false
@@ -25,7 +30,7 @@ bunreset = function() {
 
 	bun_spawn_timer = 20 * 60
 	timer_multiplier = 1
-	bun_amount = irandom_range(1, 3)
+	
 	room_block = false
 	room_replaced = false
 

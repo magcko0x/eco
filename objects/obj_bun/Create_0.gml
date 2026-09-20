@@ -16,8 +16,14 @@ shake_strength = 4
 
 player = instance_nearest(x,y,obj_player)
 
-save_entity_to_cafeteria("bun")
-
 emitter = audio_emitter_create()
 audio_emitter_falloff(emitter, 200, 300, 1)
 alarm[0] = 2
+
+dbox =
+{
+	x1 : 0,
+	y1 : 0,
+	x2 : 0,
+	y2 : 0
+}

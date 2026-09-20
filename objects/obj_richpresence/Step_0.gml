@@ -3,7 +3,7 @@
 np_update();
 
 if room != rm_elevator && room != rm_lobby_elevator { 
-    if room != rm_lobby_start && room != rm_lobby_pre_elevator && room != rm_lobby_character {
+    if room != rm_lobby_start && room != rm_lobby_pre_elevator && room != rm_lobby_cafeteria {
         
         if global.floor = "floor_industry" state = "Working hard at The Industry."
             
