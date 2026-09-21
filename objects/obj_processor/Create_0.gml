@@ -9,6 +9,7 @@ global.credits = 0
 global.currentroom = -1
 global.fog = false
 global.music = -1
+global.pmusic = -1
 
 prevmusic = -1
 scroll = 0
@@ -23,6 +24,8 @@ global.backstagey = 0;
 global.backstage  = [];
 
 load_saves()
+
+save_entities_based_on_floors()
 
 global.nextfloor = global.unlockedfloors[0]
 

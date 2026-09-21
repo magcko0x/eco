@@ -2,6 +2,21 @@ if !array_contains(global.unlockedentities,"bun") {
 	instance_destroy()
 }
 
+draw_func = function() {
+	var shake_strength = 2
+	var shakex = irandom_range(-shake_strength,shake_strength)
+	var shakey = irandom_range(-shake_strength,shake_strength)		
+	if !deac
+		draw_selected(sprite_index,image_index,x + shakex,y + shakey)
+	draw_sprite(sprite_index,image_index,x + shakex,y + shakey)	
+}
+
+step_func = function() {
+	if !variable_instance_exists(id,"ambsfx") {
+		ambsfx = audio_play_sound_on(emitter, snd_bunambience, true, 0, 0.5)
+	}	
+}
+
 speechsound = snd_bunambience
 
 textlist = [

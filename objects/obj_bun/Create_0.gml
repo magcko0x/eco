@@ -17,7 +17,7 @@ shake_strength = 4
 player = instance_nearest(x,y,obj_player)
 
 emitter = audio_emitter_create()
-audio_emitter_falloff(emitter, 200, 300, 1)
+audio_emitter_falloff(emitter, 480, 640, 1)
 alarm[0] = 2
 
 dbox =

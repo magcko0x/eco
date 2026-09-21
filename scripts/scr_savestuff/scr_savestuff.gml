@@ -139,29 +139,53 @@ function load_saves() {
 function save_entity_to_cafeteria(name) {
 	if (!array_contains(global.unlockedentities, name)) {
 		array_push(global.unlockedentities, name)
+		var notif = instance_create_depth(0,0,-9000,obj_notification)
+		
+		var capitalized_name = string_upper(string_copy(name,1,1)) + string_lower(string_copy(name,2,string_length(name)))
+		
+		notif.notiftext = capitalized_name + " has joined the cafeteria!"
+		
+		var requestedicon = asset_get_index("spr_"+name+"_icon")
+		
+		if requestedicon != -1
+			notif.notificon = requestedicon
 	}
 	custom_save()
 }
 
 function save_entities_based_on_floors() {
 	
-	var entity_pool = []
+	var entity_pool = [
+		["rot", "bun", "tendril", "shi", "myxo"],
+		["meow", "tumbler", "tim", "hopper"]
+	]
 	
-	if array_contains(global.beatenfloors,"floor_industry") {
-		entity_pool = ["rot","bun","tendril","shi","myxo"]
+	var floor_pool = ["floor_industry", "floor_floating_plateau"]
+	
+	for (var j = 0; j < array_length(floor_pool); j++) {
+		if array_contains(global.beatenfloors, floor_pool[j]) {	
+			for (var i = 0; i < array_length(entity_pool[j]); i++) {
+				if !array_contains(global.unlockedentities, entity_pool[j][i]) {
+					array_push(global.unlockedentities, entity_pool[j][i])
+
+					var name = entity_pool[j][i]
+					
+					var notif = instance_create_depth(0, 0, -9000, obj_notification)
 		
-		if (!array_contains(global.unlockedentities, name)) {
-			array_push(global.unlockedentities, name)
-		}			
+					var capitalized_name = string_upper(string_copy(name, 1, 1)) + string_lower(string_copy(name, 2, string_length(name)))
+		
+					notif.notiftext = capitalized_name + " has joined the cafeteria!"
+					
+					notif.time_created += i
+		
+					var requestedicon = asset_get_index("spr_" + name + "_icon")
+		
+					if requestedicon != -1
+						notif.notificon = requestedicon					
+				}
+			}
+		}
 	}
-	
-	if array_contains(global.beatenfloors,"floor_floating_plateau") {
-		entity_pool = ["meow","tumbler","tim","hopper"]
-		
-		if (!array_contains(global.unlockedentities, name)) {
-			array_push(global.unlockedentities, name)
-		}			
-	}	
 	
 	custom_save()
 }

@@ -1,15 +1,17 @@
 //Room generation thingies
 global.rooms = []
 
+global.rooms = []
+
 function reset_rooms() {
 	global.rooms = []
 }
 
 function generate_rooms() {
     
-    reset_rooms()
+	reset_rooms()
 
-	if global.floor = "floor_industry" {
+	if global.floor == "floor_industry" {
 		
 		global.nextfloor = "floor_floating_plateau"
 		
@@ -23,43 +25,40 @@ function generate_rooms() {
 				
 				var room_id = initial_list[i]
 				
-				if asset_has_tags(room_id, $"floor_part_{j+1}",asset_room) && !asset_has_tags(room_id, "room_ignore",asset_room) {
+				if asset_has_tags(room_id, $"floor_part_{j+1}", asset_room) && !asset_has_tags(room_id, "room_ignore", asset_room) {
 					
-					if !asset_has_tags(room_id, "room_key",asset_room) {
+					if !asset_has_tags(room_id, "room_key", asset_room) {
 						array_push(basic_room_list, room_id)
 					} else {
 						array_push(key_room_list, room_id)
 					}
+				}
+			}
+
+			var loop_limit = j == 0 ? 50 : 51
+			
+			for (var i = 0; i < loop_limit; i++) {
+					
+				var chancer = irandom(100)
+				var typechancer = irandom(100)
+		
+				var room_struct = {
+					room_asset : -4,
+					dark : false
+				}
+		
+				if chancer >= 0 && chancer < 50
+					room_struct.room_asset = basic_room_list[irandom_range(0, array_length(basic_room_list)-1)]
+				else if chancer >= 50 && chancer <= 100
+					room_struct.room_asset = key_room_list[irandom_range(0, array_length(key_room_list)-1)]
+
+				if typechancer > 40 {
+					room_struct.dark = true
+				}
 				
-				}
+				array_push(global.rooms, room_struct)
 			}
-
-			
-			for (var i = 0 + (j*50); i <= 50 * (j+1); i++) {
-					
-					var chancer = irandom(100)
-			
-					var typechancer = irandom(100)
-			
-					var room_struct =
-					{
-						room_asset : -4,
-						dark : false
-					}
-			
-			
-					if (chancer >= 0 && chancer < 50)
-						room_struct.room_asset = basic_room_list[irandom_range(0,array_length(basic_room_list)-1)]
-					else if (chancer >= 50 && chancer <= 100)
-						room_struct.room_asset = key_room_list[irandom_range(0,array_length(key_room_list)-1)]
-
-					if typechancer > 40 {
-						room_struct.dark = true
-					}
-					
-					array_push(global.rooms,room_struct)
-				}
-			}
+		}
 		
 		global.rooms[0].dark = false
 		global.rooms[50].dark = true
@@ -67,10 +66,9 @@ function generate_rooms() {
 		global.rooms[0].room_asset = rm_f1_intro
 		global.rooms[50].room_asset = rm_f1_p2_transition
 		global.rooms[100].room_asset = rm_elevator
-		
 	}
 	
-	if global.floor = "floor_floating_plateau" {
+	if global.floor == "floor_floating_plateau" {
 		
 		global.nextfloor = "floor_floating_plateau"
 		
@@ -82,42 +80,37 @@ function generate_rooms() {
 				
 			var room_id = initial_list[i]
 				
-			if !asset_has_tags(room_id, ["room_ignore"],asset_room) {
+			if !asset_has_tags(room_id, ["room_ignore"], asset_room) {
 					
-				if !asset_has_tags(room_id, ["room_key"],asset_room) {
+				if !asset_has_tags(room_id, ["room_key"], asset_room) {
 					array_push(basic_room_list, room_id)
 				} else {
 					array_push(key_room_list, room_id)
 				}
-				
 			}
 		}
 
-			
 		for (var i = 0; i <= 100; i++) {
 					
-				var chancer = irandom(100)
-			
-				var typechancer = irandom(100)
-			
-				var room_struct =
-				{
-					room_asset : -4,
-					dark : false
-				}
-			
-			
-				if (chancer >= 0 && chancer < 50)
-					room_struct.room_asset = basic_room_list[irandom_range(0,array_length(basic_room_list)-1)]
-				else if (chancer >= 50 && chancer <= 100)
-					room_struct.room_asset = key_room_list[irandom_range(0,array_length(key_room_list)-1)]
-
-				if typechancer > 40 {
-					room_struct.dark = true
-				}
-					
-				array_push(global.rooms,room_struct)
+			var chancer = irandom(100)
+			var typechancer = irandom(100)
+		
+			var room_struct = {
+				room_asset : -4,
+				dark : false
 			}
+		
+			if chancer >= 0 && chancer < 50
+				room_struct.room_asset = basic_room_list[irandom_range(0, array_length(basic_room_list)-1)]
+			else if chancer >= 50 && chancer <= 100
+				room_struct.room_asset = key_room_list[irandom_range(0, array_length(key_room_list)-1)]
+
+			if typechancer > 40 {
+				room_struct.dark = true
+			}
+				
+			array_push(global.rooms, room_struct)
+		}
 		
 		global.rooms[0].dark = false
 		global.rooms[50].dark = true
@@ -125,6 +118,5 @@ function generate_rooms() {
 		global.rooms[0].room_asset = rm_f2_intro
 		global.rooms[50].room_asset = rm_f2_transition
 		global.rooms[100].room_asset = rm_elevator
-		
 	}
 }

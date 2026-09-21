@@ -71,7 +71,6 @@ if global.interact {
 	
 							audio_play_sound(snd_burst,0,false,1,0,random_range(0.7,1.2))
 							instance_destroy()
-							audio_stop_sound(ambsfx)
 							instance_create_depth(x,y,-10000,obj_flash)
 						}
 						

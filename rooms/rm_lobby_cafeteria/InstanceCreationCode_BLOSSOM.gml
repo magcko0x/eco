@@ -1,4 +1,4 @@
-if !array_contains(global.unlockedentities,"tim") {
+if !array_contains(global.unlockedentities,"blossom") {
 	instance_destroy()
 }
 

@@ -1,1 +1,1 @@
-global.music = -1
+music = -1

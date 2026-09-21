@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_painting",
-  "eventList":[],
+  "%Name":"obj_poster",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_painting",
+  "name":"obj_poster",
   "overriddenProperties":[],
   "parent":{
     "name":"Deco",
@@ -27,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_poster",
+    "path":"sprites/spr_poster/spr_poster.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

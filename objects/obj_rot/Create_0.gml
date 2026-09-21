@@ -42,7 +42,7 @@ die = function() {
 		}
 	}
 			
-	audio_play_sound(hurtsounds[irandom(array_length(hurtsounds)-1)],0,false)
+	audio_play_sound(hurtsounds[irandom(array_length(hurtsounds)-1)],0,false,2.5)
 	instance_destroy()
 	audio_stop_sound(closesfx)
 	audio_stop_sound(farawaysfx)

@@ -19,8 +19,7 @@
   "height":22,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"52a7173f-daf6-4eaa-91ae-f9c8077afd4f","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"52a7173f-daf6-4eaa-91ae-f9c8077afd4f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"db2fe4b0-975a-49c1-9aac-45271b661cc3","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"db2fe4b0-975a-49c1-9aac-45271b661cc3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"af1921fe-0d07-48f6-abbf-c8b1c7de5cf7","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"af1921fe-0d07-48f6-abbf-c8b1c7de5cf7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_floor_floating_plateau_icon",
   "nineSlice":null,

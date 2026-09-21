@@ -6,6 +6,41 @@ if !array_contains(global.unlockedentities,"shi") {
 
 speechsound = snd_shi_charge
 
+step_func = function() {
+	if !variable_instance_exists(id,"add") {
+		add = 0	
+	}
+
+	if (image_index >= image_number - 1) {
+		if (!sound_triggered) {
+			sound_triggered = true
+			audio_play_sound_on(emitter,snd_shi_flap, false, 0, 0.5)
+		}
+	} else if (image_index < 1) {
+			sound_triggered = false;
+	}
+	
+	image_speed = 0.25
+	
+	add++
+	
+	x = x + cos(add/10)
+	y = y + sin(add/10)
+			
+	mylight.x = x
+	mylight.y = y	
+}
+
+draw_func = function() {
+	var shake_strength = 4
+		
+	shakex = irandom_range(-shake_strength, shake_strength);
+	shakey = irandom_range(-shake_strength, shake_strength);
+	if !deac
+		draw_selected(sprite_index,image_index,x + shakex,y + shakey)			
+	draw_sprite_ext(sprite_index,image_index,x + shakex,y + shakey,image_xscale,image_yscale,image_angle,image_blend,image_alpha)			
+}
+
 textlist =
 [
 	[

@@ -6,7 +6,9 @@ if CLICKED && !on {
 	
 	if !array_contains(global.beatenfloors, global.floor) {
 		array_push(global.beatenfloors,global.floor)
-	}	
+	}
+	
+	save_entities_based_on_floors()
 	
 	global.floor = global.nextfloor
 	image_index = 1

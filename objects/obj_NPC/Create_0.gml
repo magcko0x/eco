@@ -2,6 +2,7 @@ deac = false
 
 layer_create(depth,"Particles")
 psystem = part_system_create_layer("Particles",false)
+emitter = audio_emitter_create()
 
 mylight = instance_create_depth(x,y,depth,obj_light)
 mylight.radius = ( sprite_height + sprite_width ) /2
@@ -42,5 +43,18 @@ spawntext = function() {
 		mytalker.speechsound = speechsound
 	}	
 }
+
+step_func = function() {	
+}
+
+draw_func = function() {
+	if !deac {
+		draw_selected()
+	}
+	
+	draw_self()
+}
+
+audio_emitter_falloff(emitter,64,164,1)
 
 depthoffset = 0

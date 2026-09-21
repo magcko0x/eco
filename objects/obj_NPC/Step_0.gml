@@ -1,5 +1,7 @@
 setdepth(depthoffset)
 
+audio_emitter_position(emitter,x,y,0)
+
 if global.interact {
 	if CLICKED {
 		spawntext()
@@ -8,6 +10,9 @@ if global.interact {
 
 deac = instance_exists(mytalker)
 
+step_func()
+
+/*
 switch sprite_index {
 	case spr_rot:
 		if !variable_instance_exists(id,"closesfx") {

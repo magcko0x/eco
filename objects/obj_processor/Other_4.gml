@@ -25,15 +25,6 @@ if instance_exists(obj_player) {
 
 audio_channel_num(256);
 
-if global.music = -1 {
-	audio_stop_sound(prevmusic)
-} else if !(prevmusic = global.music) {
-	audio_stop_sound(prevmusic)
-	global.pmusic = audio_play_sound(global.music,0,true)
-}
-
-prevmusic = global.music
-
 audio_group_stop_all(audiogroup_default)
 
 if room = rm_start {

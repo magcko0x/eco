@@ -1,2 +1,3 @@
 part_system_destroy(psystem)
 instance_destroy(mylight)
+audio_emitter_free(emitter)

@@ -2,6 +2,56 @@ if !array_contains(global.unlockedentities,"rabies") {
 	instance_destroy()
 }
 
+step_func = function() {
+	if (!variable_instance_exists(id,"rabiestimer")) {
+		rabiestimer = 300	
+	}
+		
+	if rabiestimer > 0 {
+		rabiestimer--	
+	} else {
+		sprite_index = choose(spr_rabiesspit,spr_rabies)
+		rabiestimer = irandom_range(20,300)	
+	}
+		
+	if !variable_instance_exists(id,"mouthsfx") {
+		mouthsfx = audio_play_sound_on(emitter, snd_rabies_ambience, true, 0, 0.5)
+	}
+}
+
+draw_func = function() {
+	if sprite_index = spr_rabies {
+		var shake_strength = 2
+	} else {
+		var shake_strength = 8
+	}
+	var shakex = irandom_range(-shake_strength,shake_strength)
+	var shakey = irandom_range(-shake_strength,shake_strength)
+
+	for (var i = 0; i < 10; i++) {
+		backshadowshakex[i] = irandom_range(-shake_strength - i * 2,shake_strength + i * 2)
+		backshadowshakey[i] = irandom_range(-shake_strength - i * 2,shake_strength + i * 2)
+
+		draw_sprite_ext(sprite_index,image_index,x + backshadowshakex[i],y + backshadowshakey[i],image_xscale,image_yscale,image_angle,c_black,0.2)
+	}
+		
+	part_particles_burst(psystem,x,y,part_rabiesfog)
+		
+	part_system_depth(psystem,depth)
+		
+	if irandom(10) = 0 {
+		if image_index = 1
+			image_index = 0
+		else {
+			image_index = 1	
+		}
+	}
+		
+	if !deac
+		draw_selected(sprite_index,image_index,x + shakex,y + shakey)
+	draw_sprite(sprite_index,image_index,x + shakex,y + shakey)	
+}
+
 speechsound = snd_rabies_infect
 
 textlist = [

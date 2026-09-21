@@ -1,3 +1,6 @@
+draw_func()
+
+/*
 switch sprite_index {
 	default:
 		if !deac

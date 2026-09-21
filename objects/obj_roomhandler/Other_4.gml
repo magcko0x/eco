@@ -34,7 +34,7 @@ switch global.floor {
 		break;			
 }
 	
-if global.music != current_floor_music
+if global.currentroom >= 0
 	global.music = current_floor_music	
 	
 	

@@ -1,4 +1,4 @@
-if instance_exists(self) {
+if instance_exists(id) {
 	if active {
 		if array_contains(viruses,"rabies") {
 			if !instance_exists(obj_rabies) {

@@ -397,7 +397,7 @@ global.itemlist = [
 		},
 		use_function : function(_inventory, _slot) {
 			if global.interact {
-				if room != rm_elevator && room != rm_lobby_elevator && global.floor != -1 {
+				if global.floor != "lobby" {
 					if !instance_exists(obj_transition) {
 						var tran = instance_create_depth(0, 0, -8000, obj_transition)
 						var goto = clamp(global.currentroom + 10, 0, array_length(global.rooms) - 1)

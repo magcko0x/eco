@@ -126,6 +126,15 @@ if global.interact {
 	camera_set_view_pos(cam, new_x, new_y)
 }
 
+if global.music == -1 {
+	if audio_is_playing(global.pmusic) {
+		audio_stop_sound(global.pmusic)
+	}
+} else if prevmusic != global.music {
+	audio_stop_sound(global.pmusic)
+	global.pmusic = audio_play_sound(global.music, 0, true)
+	prevmusic = global.music
+}
 
 /*
 if keyboard_check(vk_tab) {

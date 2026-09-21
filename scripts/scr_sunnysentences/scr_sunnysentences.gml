@@ -90,7 +90,7 @@ function get_death_message(){
 					"That should be about it.",
 					"/frownOh, and when you get back there,",
 					"/mischieviousKnock 'em dead, honey!",
-					"Hehe!"
+					"/laughingHehe!"
 				]
 			]
 		break;	
