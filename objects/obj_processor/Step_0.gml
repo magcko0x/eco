@@ -10,6 +10,14 @@ if keyboard_check_pressed(vk_f4) {
 	}
 }
 
+if keyboard_check_pressed(vk_f7) {
+	if instance_exists(obj_playerhandler) {
+		for (var i = 0; i < array_length(obj_playerhandler.playerinventory); i++) {
+			obj_playerhandler.playerinventory[i] = get_item_definition("green sun")	
+		}
+	}
+}
+
 if (keyboard_check_pressed(vk_f2)) {
 	
 	var folder = "Screenshots/"

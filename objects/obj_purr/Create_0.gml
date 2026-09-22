@@ -52,3 +52,6 @@ add = 0
             yy = room_height - sprite_height 
             break
     }
+	
+layer_create(depth,"Particles")
+psystem = part_system_create_layer("Particles",false)

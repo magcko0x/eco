@@ -76,8 +76,16 @@ if global.interact {
         
         x += lengthdir_x(min(spd,abs(xdiff)),dir);
         y += lengthdir_y(min(spd,abs(ydiff)),dir);
-    
-    	if place_meeting(x,y,player) {
+		
+		var colsize = 4
+		
+		var collision =
+		rectangle_in_rectangle(
+			x - colsize, y - colsize, x + colsize, y + colsize,
+			player.bbox_left,player.bbox_top,player.bbox_right,player.bbox_bottom
+		)
+		
+    	if collision {
     		if player.state != player.dead {
     			global.diedto = "meow"
     			player.state = player.dead

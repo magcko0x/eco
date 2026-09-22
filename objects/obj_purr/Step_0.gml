@@ -11,7 +11,7 @@ if state = "FREE" {
     ipx = player.x + offx
     ipy = player.y + offy
 
-    if spd < 1
+    if spd < 2
     	spd += 0.25
 }
 
@@ -34,8 +34,8 @@ if state = "FREE" {
         
     	audio_stop_sound(farawaysfx)
         
-    	if !audio_is_playing(closesfx) {
-    		closesfx = audio_play_sound_at(snd_meowwake,x,y,0,600,900,1,false,0,1,0,random_range(0.5,1))
+    	if !audio_is_playing(snd_meowwake) {
+    		closesfx = audio_play_sound_at(snd_meowwake,x,y,0,600,900,1,false,0,1,0,random_range(1,1.5))
         }
         
     	image_index = 1
@@ -46,7 +46,7 @@ if state = "FREE" {
         audio_stop_sound(closesfx)
         		
     	if !audio_is_playing(farawaysfx) {
-    		farawaysfx = audio_play_sound_at(snd_meowwake,x,y,0,600,900,1,false,0,1,0,random_range(0.3,0.5))
+    		farawaysfx = audio_play_sound_at(snd_meowwake,x,y,0,600,900,1,false,0,1,0,random_range(0.25,0.5))
         }
         
     	image_index = 0
@@ -55,6 +55,7 @@ if state = "FREE" {
 
 if state = "DEFEAT" {
     instance_destroy(mypointer)
+    image_index = defframe
 }
 
 if global.interact {
@@ -65,6 +66,7 @@ if global.interact {
     		audio_stop_sound(farawaysfx)
             audio_play_sound(snd_punch,0,false,1,0,random_range(0.7,1.2))
     		instance_create_depth(x,y,-10000,obj_flash)
+			alarm[0] = 30
     	}
     	
     	var xdiff = ipx-x;
@@ -74,8 +76,17 @@ if global.interact {
         
         x += lengthdir_x(min(spd,abs(xdiff)),dir);
         y += lengthdir_y(min(spd,abs(ydiff)),dir);
-    
-    	if place_meeting(x,y,player) {
+   
+ 
+		var colsize = 16
+		
+		var collision =
+		rectangle_in_rectangle(
+			x - colsize, y - colsize, x + colsize, y + colsize,
+			player.bbox_left,player.bbox_top,player.bbox_right,player.bbox_bottom
+		)
+
+    	if collision {
     		if player.state != player.dead {
     			global.diedto = "meow"
     			player.state = player.dead
@@ -84,11 +95,6 @@ if global.interact {
     }
     
     if state = "DEFEAT" {
-		
-		for (var i = 0; i < 2; i++) {
-			instance_create_depth(x - 16 * choose(-1,1),y - 16 * choose(-1,1),depth,obj_meow)	
-		}
-		
-		instance_destroy()
+    	deac = true
     }
 }
