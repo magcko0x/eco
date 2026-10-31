@@ -12,11 +12,13 @@ function load_settings() {
 function create_save() {
 	if !file_exists("save.sav") {
 		var savestruct = {
-			player: [0, 0, 0],
+			player: ["head_camera", "body_basic", "pants_basic"],
+			unlockedclothes: ["head_camera", "body_basic", "pants_basic"],
 			unlockedfloors: ["floor_industry"],
 			beatenfloors: [],
 			unlockedentities: [],
-			time_capsule_item: -1
+			time_capsule_item: -1,
+			tokens : 0,
 		}
 		
 		var structjson = json_stringify(savestruct, true)
@@ -42,10 +44,12 @@ function custom_save() {
 
 	var savestruct = {
 		player: [global.playerhead, global.playerbody, global.playerpants],
+		unlockedclothes: global.unlockedclothes,
 		unlockedfloors: global.unlockedfloors,
 		beatenfloors: global.beatenfloors,
 		unlockedentities: global.unlockedentities,
-		time_capsule_item: _saved_item 
+		time_capsule_item: _saved_item,
+		tokens : global.tokens
 	}
 	
 	var structjson = json_stringify(savestruct, true)
@@ -76,36 +80,22 @@ function load_saves() {
 			global.playerbody = savestruct.player[1]
 			global.playerpants = savestruct.player[2]
 		} else {
-			global.playerhead = 0
-			global.playerbody = 0
-			global.playerpants = 0
+			global.playerhead = "head_camera"
+			global.playerbody = "body_basic"
+			global.playerpants = "pants_basic"
 		}
-
+		
+		if struct_exists(savestruct, "unlockedclothes") {
+			global.unlockedclothes = savestruct.unlockedclothes
+		} else {
+			global.unlockedclothes = ["head_camera", "body_basic", "pants_basic"]	
+		}
+		
+		global.tokens = struct_get(savestruct,"tokens") ?? 0
 		global.unlockedfloors = struct_get(savestruct, "unlockedfloors") ?? ["floor_industry"]
 		global.beatenfloors = struct_get(savestruct, "beatenfloors") ?? [] 
 		global.unlockedentities = struct_get(savestruct, "unlockedentities") ?? []
 
-		var backstage_wrapper = struct_get(savestruct, "backstage") ?? undefined
-		
-		if backstage_wrapper != undefined {
-			if is_struct(backstage_wrapper) && struct_exists(backstage_wrapper, "map") {
-				global.backstage = backstage_wrapper.map
-			} 
-			else if is_array(backstage_wrapper) {
-				global.backstage = backstage_wrapper 
-			}
-			else {
-				global.backstage = []
-			}
-		} else {
-			global.backstage = [] 
-		}
-		
-		if is_array(global.backstage) && array_length(global.backstage) > 0 {
-			global.backstagex = array_length(global.backstage[0]) div 2
-			global.backstagey = array_length(global.backstage) div 2
-		}
-		
 		global.time_capsule_item = -1
 		var loaded_item = struct_get(savestruct, "time_capsule_item") ?? -1
 		
@@ -124,15 +114,16 @@ function load_saves() {
 		}
 		
 	} else {
-		global.playerhead = 0
-		global.playerbody = 0
-		global.playerpants = 0
+		global.playerhead = "head_camera"
+		global.playerbody = "body_basic"
+		global.playerpants = "pants_basic"
+		global.unlockedclothes = ["head_camera", "body_basic", "pants_basic"]
 		global.maxfloor = -1
 		global.unlockedentities = []
-		global.backstage = []
 		global.time_capsule_item = -1
 		global.unlockedfloors = ["floor_industry"]
 		global.beatenfloors = []
+		global.tokens = 0
 	}
 }
 
@@ -157,7 +148,7 @@ function save_entities_based_on_floors() {
 	
 	var entity_pool = [
 		["rot", "bun", "tendril", "shi", "myxo"],
-		["meow", "tumbler", "tim", "hopper"]
+		["meow", "tumbler", "tim", "hopper","lilac"]
 	]
 	
 	var floor_pool = ["floor_industry", "floor_floating_plateau"]
@@ -188,86 +179,4 @@ function save_entities_based_on_floors() {
 	}
 	
 	custom_save()
-}
-
-function createselectionpool(width, height) {
-	var selection_pool = []
-    
-
-    for (var j = 0; j < height; j++) {
-        for (var i = 0; i < width; i++) {
-            array_push(selection_pool, [i, j])
-        }
-    }
-    
-    return selection_pool;
-}
-
-function createbackstage(width, height) {
-    var roomslist = [rm_backstage_basic,rm_backstage_basic_2];
-    var mapgrid = array_create(height); 
-    var datamapgrid = array_create(height);
-    
-    // Create mapgrid and datamapgrid cleanly
-    for (var j = 0; j < height; j++) {
-        mapgrid[j] = array_create(width); 
-        datamapgrid[j] = array_create(width); 
-        
-        for (var i = 0; i < width; i++) {
-            mapgrid[j][i] = roomslist[irandom(array_length(roomslist) - 1)];
-            
-            datamapgrid[j][i] = {
-                islinked : false,
-                haslink : false, // Added missing initialization
-                linkedcoords : [-1, -1],
-                darkroom : false
-            };
-        }
-    }   
-    
-    // Generate the pool AFTER grids are fully instantiated
-    var selection_pool = createselectionpool(width, height);
-    selection_pool = array_shuffle(selection_pool);
-    
-    // Make darkrooms (Ensure we don't pop more than exists in pool)
-    var darkroom_count = min(30, array_length(selection_pool));
-    for (var i = 0; i < darkroom_count; i++) {
-        var current_coord = array_pop(selection_pool);
-        var target_x = current_coord[0];
-        var target_y = current_coord[1];
-    
-        datamapgrid[target_y][target_x].darkroom = true;
-    }
-    
-    // Regenerate selection pool for links to ensure fresh distribution
-    selection_pool = createselectionpool(width, height);
-    selection_pool = array_shuffle(selection_pool);
-    
-    // Make links (Requires 2 coordinates per iteration, so ensure we have at least 2 available)
-    var link_count = min(10, array_length(selection_pool) div 2);
-    for (var i = 0; i < link_count; i++) {
-        var current_coord = array_pop(selection_pool);
-        var target_x = current_coord[0];
-        var target_y = current_coord[1];
-        
-        var end_coord = array_pop(selection_pool);
-        var end_x = end_coord[0];
-        var end_y = end_coord[1];       
-    
-        datamapgrid[target_y][target_x].haslink = true;
-        datamapgrid[end_y][end_x].haslink = true;
-        
-        datamapgrid[target_y][target_x].linkedcoords = [end_x, end_y];
-        datamapgrid[end_y][end_x].linkedcoords = [target_x, target_y];
-    }   
-
-    var middle_col = width div 2;
-    var middle_row = height div 2;
-
-    mapgrid[middle_row][middle_col] = rm_backstage_basic_intro;
-    
-    global.backstagex = middle_col;
-    global.backstagey = middle_row;
-    global.backstage  = mapgrid;
-    global.backstagedata = datamapgrid;
 }

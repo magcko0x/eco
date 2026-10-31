@@ -11,7 +11,8 @@ if global.interact {
 		} else {
 			var _bun = instance_create_depth(obj_roomtarget.x, obj_roomtarget.y, depth, obj_bun)
 			_bun.owner = id
-			bun_spawn_timer = 3 * 60
+			
+			bun_spawn_timer = 9999
 		}
 	}
 

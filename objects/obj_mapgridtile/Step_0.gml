@@ -1,4 +1,4 @@
-if global.inbackstage {
+if global.floor == "floor_backstage" {
 	if variable_instance_exists(id,"stagex") && variable_instance_exists(id,"stagey") {
 		if global.backstagex == stagex && global.backstagey = stagey {
 			image_blend = c_orange	

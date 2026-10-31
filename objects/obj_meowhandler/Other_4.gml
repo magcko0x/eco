@@ -3,7 +3,7 @@
 mymeows = -1
 
 if !active {
-	chance = irandom(5)
+	chance = irandom(15)
 }
 
 if chance = 0 {

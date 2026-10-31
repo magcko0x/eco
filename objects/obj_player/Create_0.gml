@@ -36,15 +36,29 @@ interactinput = keyboard_check_released(ord("E"))
 jumpinput = keyboard_check(vk_space);
 runinput = keyboard_check(vk_shift);
 
+/*
 head = global.playerhead
 body = global.playerbody
 pants = global.playerpants
+*/
+
+head = variable_clone(get_item_definition(global.playerhead,"index",global.headslist))
+body = variable_clone(get_item_definition(global.playerbody,"index",global.bodieslist))
+pants = variable_clone(get_item_definition(global.playerpants,"index",global.pantslist))
+
+get_current_part_frame = function(sprite) {
+	
+	var total_steps = floor((current_time / 1000) * sprite_get_speed(sprite))
+	return total_steps % sprite_get_number(sprite)
+}
 
 getpartids(head,body,pants)
 
 headframe = 0
 bodyframe = 0
 pantsframe = 0
+
+canstep = true
 
 active = true
 
@@ -63,7 +77,6 @@ dead = function ()
 		//behaviour
 		audio_stop_all()
 		
-		global.inbackstage = false
 		global.floor = "lobby"
 		
 		for (var i = 0; i < array_length(obj_playerhandler.playerinventory); i++) {

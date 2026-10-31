@@ -20,7 +20,6 @@ bun_top_overlay_y = -60
 bun_bottom_overlay_y = display_get_gui_height() + 60
 bun_overlay_shake_strength = 0
 
-
 bunreset = function() {
 
 	bun_spawn_active = false

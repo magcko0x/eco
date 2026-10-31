@@ -31,7 +31,11 @@ switch global.floor {
 			
 	case "floor_floating_plateau":
 		current_floor_music = mus_deviled_gardens
-		break;			
+		break;
+		
+	case "floor_backstage":
+		current_floor_music = mus_black
+		break;
 }
 	
 if global.currentroom >= 0

@@ -66,8 +66,4 @@ if collision && !player.safe {
 	}
 }
 
-y = ystart + sin(current_time/1000) * 10
-
-x = xstart + cos(current_time/1000) * 20
-
 audio_emitter_position(emitter, x, y, 0)

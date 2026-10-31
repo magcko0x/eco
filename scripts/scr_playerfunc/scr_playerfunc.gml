@@ -1,7 +1,3 @@
-global.playerhead = 0
-global.playerbody = 0
-global.playerpants = 0
-
 function playerwalk(runiput,xinput,yinput,basespd){
 		
 		if xinput = 1 { xdir = -1 }

@@ -61,7 +61,16 @@ if global.interact {
 	
 	dir = (dir + 360) % 360
 	
-	var player = instance_place(x, y, obj_player)
+	var player = noone
+	
+	if instance_exists(obj_player) {
+		
+		var near_player = instance_nearest(x,y,obj_player)
+		
+		if rectangle_in_circle(near_player.bbox_left,near_player.bbox_top,near_player.bbox_right,near_player.bbox_bottom,x,y,4) {
+			player = near_player	
+		}
+	}
 	
 	if player != noone {
 		if player.myhand.state == player.myhand.free && player.myhand.invincibletimer <= 0 {

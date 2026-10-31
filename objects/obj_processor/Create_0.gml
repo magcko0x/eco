@@ -29,18 +29,6 @@ save_entities_based_on_floors()
 
 global.nextfloor = global.unlockedfloors[0]
 
-createbackstage(50,50);
-
-global.inbackstage = false
-
-var grid_height = array_length(global.backstage);
-var grid_width  = array_length(global.backstage[0]);
-
-global.room_states = array_create(grid_height);
-for (var j = 0; j < grid_height; j++) {
-	global.room_states[j] = array_create(grid_width, undefined);
-}
-
 zoomlevel = 1
 current_zoom = zoomlevel
 cameraspd = 2
@@ -82,3 +70,8 @@ global.hideinventory = false
 if !variable_global_exists("backfromdeath") {
 	global.backfromdeath = false	
 }
+
+global.prevroom = room
+global.prevEnID = 0
+global.prevplayerroomx = 0
+global.prevplayerroomy = 0

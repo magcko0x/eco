@@ -6,6 +6,7 @@ if usetarget {
 			if inst.enID = enID {
 				target_x = inst.x
 				target_y = inst.y
+				break
 			}
 		}
 	}
@@ -47,7 +48,6 @@ else {
 		if extraparams {
 			obj_player.x = target_x;
 			obj_player.y = target_y;
-			obj_player.dir = target_face;
 		}
 		
 		if usetarget {

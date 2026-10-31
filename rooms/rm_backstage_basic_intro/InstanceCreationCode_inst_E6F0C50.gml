@@ -4,7 +4,7 @@ target_rm = rm_lobby_start
 transitioncode = function() {
 	global.backstagex = 0
 	global.backstagey = 0
-	global.inbackstage = false
+	global.floor = "lobby"
 	
 	var entities = tag_get_asset_ids("handler",asset_object)
 	

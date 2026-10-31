@@ -1,4 +1,5 @@
 event_inherited()
+deac = false
 
 cursor = 1
 

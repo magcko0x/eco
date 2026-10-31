@@ -471,7 +471,7 @@ global.itemlist = [
 		},
 		use_function : function(_inventory, _slot) {
 			if global.interact {
-				if global.inbackstage {
+				if global.floor == "floor_backstage" {
 					if !layer_get_visible("menu_backstagemap") {
 						audio_play_sound(snd_lever, 0, false, 1, 0, random_range(0.4, 0.6))
 						global.canpause = false
@@ -483,5 +483,38 @@ global.itemlist = [
 				}
 			}
 		}
-	}
+	},
+	
+	{
+		name : "100 CREDIT GIFTCARD",
+		sprite : spr_item_giftcard,
+		image : 0,
+		cost : 100
+	},
+	
+	{
+		name : "VIROPHAGE",
+		sprite : spr_item_virophage,
+		image : 0,
+		cost : 175,
+		update_function : function(_inventory, _slot, _selected_slot) {
+		},
+		use_function : function(_inventory, _slot) {
+			if global.interact {
+				if instance_exists(obj_mothervirushandler) {
+					obj_mothervirushandler.active = false
+				}
+				
+				for (var i = 0; i < instance_number(obj_virushandler); i++) {
+					instance_destroy(instance_find(obj_virushandler,i))	
+				}
+				
+				var myflash = instance_create_depth(0,0,0,obj_spriteflash)
+				myflash.sprite_index = sprite
+				myflash.image_speed = 0				
+				
+				inventory_remove(_inventory,_slot)
+			}
+		}
+	},	
 ]

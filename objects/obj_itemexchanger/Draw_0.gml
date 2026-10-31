@@ -1,3 +1,4 @@
+
 gpu_set_blendenable(false)
 gpu_set_colorwriteenable(false,false,false,true);
 draw_set_alpha(0);
@@ -20,7 +21,10 @@ c2 = merge_colour(c_blue,c_red,abs(sin(timer / 25)))
 
 draw_rectangle_colour(x - 16,y - 96,x + 16,y - 32,c1,c1,c2,c2,false)
 
-draw_sprite_ext(item.sprite,item.image,x,y + floor(itemy) - 64,image_xscale,image_yscale,floor(itema),image_blend,image_alpha)
+
+if array_length(itemarray) > 0 {
+	draw_sprite_ext(item.sprite,item.image,x,y + floor(itemy) - 64,image_xscale,image_yscale,floor(itema),image_blend,image_alpha)
+}
 
 gpu_set_alphatestenable(false);
 gpu_set_blendmode(bm_normal);

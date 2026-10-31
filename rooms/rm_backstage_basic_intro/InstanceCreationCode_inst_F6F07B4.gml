@@ -3,4 +3,4 @@ transitioncode = function() {
 	global.backstagex -= 1
 }
 
-target_rm = global.backstage[global.backstagex - 1,global.backstagey]
+target_rm = global.backstage[global.backstagey][global.backstagex - 1]

@@ -4,29 +4,31 @@ var chancer, xx, yy
 
 chancer = irandom(3) 
 
+var _spacing = 128
+
 switch chancer { 
     case 0: 
-        xx = sprite_width 
-        yy = sprite_height 
+        xx = -_spacing 
+        yy = -_spacing 
         break
 		
 	case 1:
-		xx = room_width - sprite_width
-		yy = 0 + sprite_height
+		xx = room_width + _spacing
+		yy = 0 - _spacing
 		break
 		
     case 2: 
-        xx = room_width - sprite_width 
-        yy = room_height - sprite_height 
+        xx = room_width + _spacing 
+        yy = room_height + _spacing 
         break
     
     case 3: 
-        xx = sprite_width 
-        yy = room_height - sprite_height 
+        xx = -_spacing 
+        yy = room_height + _spacing 
         break
 }
 	
-var meow = meowcounter > 3 ? instance_create_depth(xx,yy,depth,choose(obj_meow,obj_purr)) : instance_create_depth(xx,yy,depth,obj_meow)
+var meow = meowsleft > 3 ? instance_create_depth(xx,yy,depth,choose(obj_meow,obj_purr)) : instance_create_depth(xx,yy,depth,obj_meow)
 
 if meowsleft > 0 {
     meowsleft--

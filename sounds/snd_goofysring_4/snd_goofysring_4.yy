@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_goofysring_4",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.2960544,
+  "exportDir":"",
+  "name":"snd_goofysring_4",
+  "parent":{
+    "name":"Goofyass sfx",
+    "path":"folders/Sounds/SFX/Goofyass sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":11025,
+  "soundFile":"snd_goofysring_4.mp3",
+  "volume":1.0,
+}

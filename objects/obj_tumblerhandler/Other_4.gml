@@ -1,7 +1,7 @@
-chance = irandom_range(0,7)
+chance = irandom_range(0,15)
 
 if chance = 0 {
-	TA = (irandom_range(10,(room_width * room_height) / 2000) div 10)
+	TA = (irandom_range(2,16))
 	
 	var collist = tag_get_asset_ids("solid",asset_object)
 	collist = array_concat(collist,tag_get_asset_ids("pickup",asset_object))

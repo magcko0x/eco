@@ -25,7 +25,11 @@ flip = array_create(INVENTORY_SLOTS,-1)
 characters = "0123456789C"
 
 currentcredits = 0
+currenttokens = global.tokens
 
 myfont = font_add_sprite_ext(spr_credit_numbers, characters, true, 4)
 
+myfont2 = font_add_sprite_ext(spr_token_numbers, "0123456789Tx", true, 0)
+
 showcredits = false
+showtokens = true

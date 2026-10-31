@@ -1,24 +1,4 @@
-function createbackstage(width,height) {
-	roomslist = [rm_backstage_basic]
-
-	mapgrid = array_create(height); 
-
-	roomslist = [rm_backstage_basic];
-
-	for (var j = 0; j < height; j++) {
-		mapgrid[j] = array_create(width); 
-    
-		for (var i = 0; i < width; i++) {
-			mapgrid[j][i] = roomslist[irandom(array_length(roomslist)-1)];
-		}
-	}
-
-	var middle_col = width div 2
-	var bottom_row = height - 1
-
-	mapgrid[bottom_row,middle_col] = rm_backstage_basic_intro
-
-	global.backstage = mapgrid
-}
-
-instance_destroy()
+// Obsolete backstage boot-time generator.
+// The backstage is now a regular floor built by generate_rooms() -> generate_backstage_map()
+// in scr_roomgen.gml when global.floor == "floor_backstage". This object stays in the project
+// but is dormant: nothing instantiates it anymore, so this creation code never runs.

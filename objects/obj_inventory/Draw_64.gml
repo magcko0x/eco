@@ -1,6 +1,6 @@
 if !global.hideinventory {
 	
-	if instance_exists(obj_playerhandler) {
+	if instance_exists(obj_playerhandler) && instance_exists(obj_player){
     
 		//Draw window
     
@@ -81,6 +81,12 @@ if !global.hideinventory {
     
 		//Draw credits
 		
+		var creditsw = 0
+		var creditsh = 0
+		
+		var creditsyoffset = 0
+		var creditsxoffset = 0		
+		
 		if showcredits {
 			var credits = "C" + string_replace_all(string_format(currentcredits,3,0)," ","0")
 		
@@ -102,11 +108,11 @@ if !global.hideinventory {
 		    draw_set_halign(fa_left)
 		    draw_set_valign(fa_top)
 		
-			var creditsw = 96
-			var creditsh = string_height(credits)
+			creditsw = 96
+			creditsh = string_height(credits)
 		
-			var creditsyoffset = 8
-			var creditsxoffset = -16
+			creditsyoffset = 8
+			creditsxoffset = -16
 		
 			draw_sprite_stretched
 			(
@@ -118,8 +124,24 @@ if !global.hideinventory {
 				
 			draw_text_colour(invx - creditsw + creditsxoffset,invy + creditsyoffset,credits,c_white,c_white,c_white,c_white,1)
 	
-		    prevpos = pos
-		    previtem = obj_playerhandler.playerinventory[pos]
 		}
+		
+		if showtokens {
+			var credits = "Tx" + string(global.tokens)
+			
+			draw_set_font(myfont2)
+			draw_set_halign(fa_right)
+			draw_set_valign(fa_top)
+			
+			draw_text_colour(display_get_gui_width() - 8,8,credits,c_white,c_white,c_white,c_white,1)
+			
+		    draw_set_halign(fa_left)
+		    draw_set_valign(fa_top)
+	
+		}
+		
+		prevpos = pos
+		previtem = obj_playerhandler.playerinventory[pos]
+		
 	}
 }

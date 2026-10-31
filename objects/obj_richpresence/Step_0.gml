@@ -9,6 +9,8 @@ if room != rm_elevator && room != rm_lobby_elevator {
             
         if global.floor = "floor_floating_plateau" state = "Breathing some fresh air at the Floating Plateau."
             
+        if global.floor = "floor_backstage" state = "Exploring deep in the Backstage."
+            
     } else state = "Preparing for the next run in The Lobby." 
         
 } else state = "Awaiting their fate in The Elevator."

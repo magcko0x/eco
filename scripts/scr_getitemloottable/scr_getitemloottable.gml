@@ -8,13 +8,18 @@ function get_item_loot_table() {
 			["battery",50],
 		//compass
 			["compass",100],
-        //save
-            ["save",20],
 		//green sun
 			["green sun",1],
 		//blossom
-			["blossom",1]
+			["blossom",1],
+		//100 credit giftcard
+			["100 credit giftcard",20]
 	]
+	
+	if instance_exists(obj_mothervirushandler) {
+        //virophage
+		array_push(item_loot_table,["VIROPHAGE",15])		
+	}
 	
 	if instance_exists(obj_rothandler) {
         //apple

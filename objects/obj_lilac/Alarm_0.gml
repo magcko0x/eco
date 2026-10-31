@@ -1,0 +1,1 @@
+current_sound = audio_play_sound_on(emitter,snd_lilac_groan,true,0,1)

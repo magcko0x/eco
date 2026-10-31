@@ -167,7 +167,7 @@
   "name":"rm_f2_basic2",
   "parent":{
     "name":"Basic rooms",
-    "path":"folders/Rooms/Floor 2/Part1/Basic rooms/Basic rooms.yy",
+    "path":"folders/Rooms/Floor 2/Part1/Basic rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

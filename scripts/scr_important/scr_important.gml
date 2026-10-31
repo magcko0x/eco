@@ -149,3 +149,16 @@ function spawn_across_area(spawnobj,spawnzone,collist) {
 	mask_index = old_mask
 	return spawnedobj
 }
+
+function add_credits(amount) {
+	global.credits += amount
+	
+	if !variable_instance_exists(id,"payedtokens") {
+		payedtokens = false
+	}
+	
+	if !payedtokens {
+		global.tokens += ceil(amount / 4)
+		payedtokens = true
+	}
+}

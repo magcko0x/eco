@@ -23,8 +23,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_outdoorstiles",
-    "path":"sprites/spr_outdoorstiles/spr_outdoorstiles.yy",
+    "name":"spr_outdoorsstiles",
+    "path":"sprites/spr_outdoorsstiles/spr_outdoorsstiles.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{

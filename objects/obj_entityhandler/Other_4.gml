@@ -6,10 +6,10 @@ switch global.floor {
 		entitylist = [
 			{ obj: obj_rothandler, min_room: 0, max_room: 100 },
 			{ obj: obj_mothervirushandler, min_room: 0, max_room: 100 },
-			{ obj: obj_bunhandler, min_room: 9, max_room: 100 },
-			{ obj: obj_tendrilhandler, min_room: 9, max_room: 100 },
-			{ obj: obj_myxohandler, min_room: 49, max_room: 100 },
-			{ obj: obj_shihandler, min_room: 49, max_room: 100 }
+			{ obj: obj_bunhandler, min_room: 10, max_room: 100 },
+			{ obj: obj_tendrilhandler, min_room: 10, max_room: 100 },
+			{ obj: obj_myxohandler, min_room: 51, max_room: 100 },
+			{ obj: obj_shihandler, min_room: 51, max_room: 100 }
 		]
 	break
     
@@ -21,10 +21,17 @@ switch global.floor {
 			{ obj: obj_tumblerhandler, min_room: 9, max_room: 100 },
 			{ obj: obj_tendrilhandler, min_room: 9, max_room: 100 },
 			{ obj: obj_meowhandler, min_room: 20, max_room: 100 },
+			{ obj: obj_lilachandler, min_room: 20, max_room: 100 },
 			{ obj: obj_timhandler, min_room: 20, max_room: 100 },
 			{ obj: obj_hopperhandler, min_room: 20, max_room: 100 },
 			{ obj: obj_shihandler, min_room: 40, max_room: 100 },
 			{ obj: obj_myxohandler, min_room: 50, max_room: 100 }
+		]
+	break
+	
+	case "floor_backstage":
+		entitylist = [
+			{ obj: obj_unbornhandler, min_room: 0, max_room: 100 }
 		]
 	break
 }

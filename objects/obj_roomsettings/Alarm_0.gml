@@ -4,4 +4,4 @@ if lightsout {
 	}
 }
 
-if global.music != music global.music = music
+global.music = music

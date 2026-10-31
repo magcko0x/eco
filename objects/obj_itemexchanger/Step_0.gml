@@ -15,4 +15,9 @@ itemy = y_offset
 
 itema = y_offset + angle_offset
 
-item = itemarray[selector]
+if array_length(itemarray) > 0 {
+	selector = clamp(selector,0,array_length(itemarray) - 1)
+
+	item = itemarray[selector]
+	
+}

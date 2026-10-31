@@ -8,7 +8,6 @@ function get_message(){
 			"I'll be there for you!",
 			"Like how you were for me.",
 			"Now, this place you're standing in is my old coffee shop.",
-			"I used to be a barista here before I Ascended!",
 			"We used to go here all the time, so many great memories!",
 			"/frownThe place never really took off though.",
 			"/defaultSo, while we're stuck in...",
@@ -101,13 +100,16 @@ function get_death_message(){
 					"Hey, hun!",
 					"/sadAwww, you seem upset. What got you this time?",
 					"/frownAh.",
-					"/defaultYou were claimed by the essence of blight otherwise known as 'Rot'.",
-					"You must keep your timer above '0'.",
-					"Failing to do so allows its manifestation.",
-					"You can dodge death by using your hand to punch Rot.",
-					"/frownHowever, this is not reliable...",
-					"/defaultYou're better off collecting syringes to add to your timer.",
-					"Enjoy your new attempt."
+					"/defaultYou were claimed by an old college friend of mine known as \"Rot\".",
+					"According to my observations, you must attempt to keep your timer above zero!",
+					"/frownFailing to do so allows him to manifest.",
+					"/defaultTo keep your timer above zero, you must collect the multiple syringes on the floor!",
+					"However!",
+					"Though not recommended, when he is there, you ARE able to punch rot to temporarily stop his manifestation!",
+					"/laughingDoing so buys you some time to attempt to give yourself... more time!",
+					"/defaultStill, you are better off attempting to find the syringes on the floor.",
+					"That's all though!",
+					"/laughingSee you soon!"
 				]
 			]
 		break;
@@ -115,14 +117,21 @@ function get_death_message(){
 		case "myxo":
 			textlist = [
 				[
-					"Hey!",
+					"Hi, sugar!",
 					"/frownWhat now?",
 					"Hm...",
-					"/defaultIt seems you were taken by the photophobic ones, otherwise known as 'Myxo'.",
-					"They hate light as it disturbs their 'eyesight'.",
-					"Keep away from shining your light at them and they won't charge at you.",
-					"Fail to do so, however...",
-					"That's all."
+					"/defaultOh, you were killed by my former college friend, \"MC Myxo\"!",
+					"Or just \"Myxo\", for short!",
+					"You see, due to being an MC, he loves clubbing in the dark.",
+					"He's got a pretty active social life, so he brings his friends along, which are mostly just himself!",
+					"Though, due to liking clubbing in the dark, shining a light upon him makes him rather...",
+					"/frownMad.",
+					"/sadAnd when he is mad...",
+					"You... saw what happened.",
+					"/defaultRed flags aside, to avoid his anger, simply do not flash a light on him and let him club in peace!",
+					"That being said though...",
+					"/laughingI wish you the best out there! You can do it hun!",
+					"Hehe!"
 				]
 			]
 		break;
@@ -136,12 +145,13 @@ function get_death_message(){
 					"/sadThose...",
 					"/angryMonstrosities.",
 					"/frownAhem-",
-					"/frownYou... died to the HIDEOUS beast known as...",
-					"/angry'Meow'.",
+					"/frownYou... died to the HIDEOUS beasts known as...",
+					"/angry\"Meow\".",
 					"/sadEughh...",
+					"They used to be Tendril's cats before this place made them horrifically aggressive...",
 					"/frownThey slowly chase after you, and when they catch you...",
 	                "/angryThey SHRED you to PIECES!",
-	                "To guarantee your survival, punch them by clicking on them.",
+	                "To escape their HIDEOUS grasp, make sure to click on them with your hand to punch them.",
 	                "/frownGood luck next time, hun.",
 	                "/sadI hate those things."
 				]

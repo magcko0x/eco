@@ -7,8 +7,8 @@ itemlist = [
 	variable_clone(get_item_definition("apple")),
 	variable_clone(get_item_definition("compass")),
 	variable_clone(get_item_definition("blossom")),
-	variable_clone(get_item_definition("save")),
 	variable_clone(get_item_definition("green sun")),
+	variable_clone(get_item_definition("virophage")),
 ]
 
 available_items = array_shuffle(itemlist)

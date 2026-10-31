@@ -1,9 +1,11 @@
 var me = self
 
+
 if !instance_exists(obj_mothervirushandler) {
 	instance_destroy()
 	exit
 }
+
 
 for (var i = 0;i < instance_number(obj_virushandler);i++) {
 	if instance_find(obj_virushandler,i + 1) != noone {

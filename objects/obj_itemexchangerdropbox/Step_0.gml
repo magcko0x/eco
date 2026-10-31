@@ -6,7 +6,8 @@ if global.interact && CLICKED {
 	
 	if obj_playerhandler.playerinventory[obj_inventory.pos] != -1 {
 		solditem = obj_playerhandler.playerinventory[obj_inventory.pos]
-		global.credits += solditem.cost		
+
+		add_credits(solditem.cost)
 		
 		audio_play_sound_at(snd_pickup,x,y,0,100,200,1,false,0,0.5,0,2)
 		obj_playerhandler.playerinventory[obj_inventory.pos] = -1

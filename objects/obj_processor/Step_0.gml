@@ -138,6 +138,7 @@ if global.music == -1 {
 	if audio_is_playing(global.pmusic) {
 		audio_stop_sound(global.pmusic)
 	}
+	prevmusic = global.music
 } else if prevmusic != global.music {
 	audio_stop_sound(global.pmusic)
 	global.pmusic = audio_play_sound(global.music, 0, true)
@@ -202,26 +203,18 @@ audio_group_set_gain(audiogroup_music,musicvol)
 if debug_mode {
     if room != rm_elevator && room != rm_lobby_elevator{
         if keyboard_check_pressed(vk_up) {
-            room = global.rooms[global.currentroom+1]
+            room = global.rooms[global.currentroom+1].room_asset
             global.currentroom += 1
         }
         
         if keyboard_check_pressed(vk_down) {
-            room = global.rooms[global.currentroom-1]
+            room = global.rooms[global.currentroom-1].room_asset
             global.currentroom -= 1
-        }
-    } else {
-        if keyboard_check_pressed(vk_up) {
-            global.floor += 1
-        }
-        
-        if keyboard_check_pressed(vk_down) {
-            global.floor -= 1
         }
     }
     
     if keyboard_check_pressed(vk_end) {
-        room = global.rooms[100]
-        global.currentroom = 100
+        room = global.rooms[array_length(global.rooms)-1].room_asset
+        global.currentroom = array_length(global.rooms)-1
     }
 }
